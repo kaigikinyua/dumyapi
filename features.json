@@ -1,0 +1,42 @@
+{
+    "production_checklist":[
+        "Generic Data",
+        "MyDB","PWA",
+        "Download MyDB json file",
+        "Securing mydb from other users",
+        "NAME[RandomDataGenerator,RandomGenerator,RandomData,OpenApi,freeApi]"
+    ],
+    "feature_list":[
+        {
+            "name":"Generic Data",
+            "features":[
+                "Payment Details",
+                "Sales",
+                "Products and thumb nails",
+                "Products Pictures",
+                "messages|chats",
+                "Lists",
+                "Blogs",
+                "Blog Lists",
+                "Users",
+                "Reviews and Comments"
+            ]
+        },
+        {
+            "name":"MyDB",
+            "features":[
+                "Create data schema",
+                "Populate schema with random data",
+                "Download json file",
+                "[extra] Secure file"
+            ]
+        },
+        {
+            "name":"PWA",
+            "features":[
+                "Create Schema Offline",
+                "Save to send latter"
+            ]
+        }
+    ]
+}
