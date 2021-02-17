@@ -1,0 +1,98 @@
+@import '../components/mixins.scss';
+body{
+    background:$darkbg;
+}
+header.landing{
+    height: 100vh;
+    width:100vw;
+    background:$darkbg;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    .container{
+        height:70%;
+        @include center_s;
+        background:rgba(10, 10, 10, 0.6);
+        color:white;
+        padding:20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+section.full{
+    height: 100vh;
+    width:100vw;
+    .container{
+        height:70%;
+        @include center_s;
+        //text-align: center;
+        h3.title{
+            text-align: center;
+        }
+    }
+    .title{
+        color:lightseagreen;
+        font-size: 1.6em;
+    }
+}
+
+div.text{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+div.image{
+    position: relative;
+    text-align: center;
+    img{
+        height:auto;
+        width:80%;
+    }
+}
+
+div.card_container{
+    display: flex;
+    justify-content: space-evenly;
+    //flex-flow: wrap;
+    flex-wrap: wrap;
+    text-align: center;
+}
+div.usecase{
+    padding:10px;
+    flex-shrink: 0;
+    width:250px;
+    height: 150px;
+    background:white;
+    border-radius: 20px;
+    margin:5px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+p.big_number{
+    font-size: 3em;
+    font-family: monospace;
+}
+div.quick_start{
+    color:white;
+    div.instruction{
+        padding:10px;
+        margin:10px 0px;
+        position: relative;
+        @include center_h;
+        max-width: 800px;
+
+    }
+    pre{
+        text-align: left;
+        justify-content: left;
+        background:$lightbg;
+        margin:0px;
+        position: relative;
+        max-width: 300px;
+        @include center_h;
+        overflow-x: scroll;
+    }
+}

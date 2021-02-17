@@ -1,0 +1,36 @@
+@import './mixins.scss';
+.topnav,.footer{
+    position: fixed;
+    width:100vw;
+    left:0px;
+    z-index: $nav_prim;
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include center_h;
+    }
+    background: $lightbg;
+    color:white;
+}
+.topnavshow{
+    animation:1s 0s revealFromTop ease-in;
+    top:0px;
+}
+.topnavhide{
+    top:-100%;
+    animation:2s 1s revealFromTop reverse;
+}
+.topnav .barner{
+    padding:5px;
+}
+ul.links{
+    padding:10px;
+}
+.footer{
+    bottom:0px;
+    padding:10px;
+}
+.footer ul.links{
+    font-size: 0.8em;
+    padding:0px;
+}

@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OpenApi</title>
+    <link rel="stylesheet" href="../static/css/components/main.css">
+    <link rel="stylesheet" href="../static/css/components/navs.css">
+    <link rel="stylesheet" href="../static/css/pages/index.css">
+</head>
+<body>
+    <div class="topnav" id="topnav">
+        <div class="container">
+            <div class="barner">
+                <h3 class="barner">
+                    {% block barner %}{% endblock barner %}
+                </h3>
+            </div>
+            <ul class="links">
+                {% block links %}{% endblock links %}
+            </ul>
+        </div>
+    </div>
+   <section class="app">
+        {% block app %}
+        {% endblock app %}
+   </section>
+    <!--section.quick_start-->
+    <div class="footer">
+        <div class="container dual_flex">
+            <div class="info"><small>Open API</small></div>
+            <ul class="links">
+                <a href="#"><li>github</li></a>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="../static/js/ui.js"></script>
+</html>
