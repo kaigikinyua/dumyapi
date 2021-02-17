@@ -1,0 +1,31 @@
+body{
+    background:rgba(50,50,80,0.9);
+
+}
+div.card{
+    width:500px;
+    color:white;
+    background:rgba(25,25,50,0.6);
+    text-align: center;
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+h3.title{
+    font-size: 3em;
+    color: rgba(150,150,180,0.9);
+    margin:20px 0px;
+    padding:10px;
+    border-bottom: 1px solid rgba(150,150,180,0.9);
+}
+p{
+    font-size: 1.5em;
+}
+ul.links{
+    li{
+        margin:30px;
+        padding:10px;
+        background:rgba(50,50,80,0.95);
+    }
+}

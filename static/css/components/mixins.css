@@ -1,0 +1,17 @@
+@-webkit-keyframes revealFromTop {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0px;
+  }
+}
+@keyframes revealFromTop {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0px;
+  }
+}
+/*# sourceMappingURL=mixins.css.map */
