@@ -12,6 +12,16 @@ eT:
 sT: Draw the following [Products,Thumbnails,User Profiles] ratio of 80:40:30
 eT:
 
+sT: Handle the UI styling and coloring of the whole site
+    - Rebrand to Dummy Data generator
+    - Minimalize the landing page cover image
+    - Flatten the logo 
+eT:
+
+sT: Create documentation page and a quick start guide
+    -Document urls
+eT: 
+
 rV:1.0.0
 
 sT:Analyze and fix bugs
