@@ -1,0 +1,22 @@
+sT: Create a dummy user payment details generator
+    -Generate user[firstname,lastname]
+    -Generate digital finance company[credit card number]
+eT:
+
+sT: Create a sales generator
+    -Generate product name,id,price
+    -Generate sales per day for 1 month
+        -Create a random month and year generator
+eT:
+
+sT: Draw the following [Products,Thumbnails,User Profiles] ratio of 80:40:30
+eT:
+
+rV:1.0.0
+
+sT:Analyze and fix bugs
+    -Until a stable and user friendly add 1 to `x` 
+eT:
+
+rV:1.0.x
+
