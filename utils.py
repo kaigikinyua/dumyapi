@@ -2,7 +2,7 @@
 Utility functions to be used by the scripts to manage various resources
 and keep the scripts consistent
 """
-import json,requests,os
+import json,requests,os,random
 class Files:
     def __init__(self,filepath):
         self.filepath=filepath
@@ -130,6 +130,11 @@ class Logs:
         res=f.writeFile(str(message)+"\n",append=True)
         if(res!=False):
             Messages.printMessage(Messages.FAIL,'[Err]',"Could not log event to logs")
+
+class RandomFigures:
+    @staticmethod
+    def randomFigure(min=0,max=1000000000):
+        return random.randrange(min,max)
 
 #advanced feature for populating websites
 """class Requests:

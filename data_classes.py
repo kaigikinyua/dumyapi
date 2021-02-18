@@ -1,17 +1,23 @@
+from random import randrange
+from utils import JsonFile,Messages,RandomFigures
 class User:
     def __init__(self):
-        self.user_schema_path="schemas/users_schema.json"
+        self.user_schema_path="./schemas/users_schema.json"
         self.dataset=JsonFile.loadData(self.user_schema_path)
-
+    
     def gen_fulluser(self):
-        fNameSize=len(self.dataset[0]["first"])#-1
-        lNameSize=len(self.dataset[1]["last"])#-1
-        f_name=dataset[0]["first"][randrange(0,fNameSize)]["name"]
-        l_name=dataset[1]["last"][randrange(0,lNameSize)]["name"]
+        g=randrange(0,2)
+        genders={0:"male",1:"female"}
+
+        fNameSize=len(self.dataset[genders[g]][0]["first"])#-1
+        lNameSize=len(self.dataset[genders[g]][1]["last"])#-1
+        f_name=self.dataset[genders[g]][0]["first"][randrange(0,fNameSize)]["name"]
+        l_name=self.dataset[genders[g]][1]["last"][randrange(0,lNameSize)]["name"]
         user={
             "username":"{f} {l}".format(f=f_name,l=l_name),
             "firstname":f_name,"lastname":l_name,
             "email":self.gen_email(f_name,l_name),
+            "age":self.gen_age(),
             "password":self.gen_pass(8),
             "phone":self.gen_phone(10),
             "profile":self.gen_profile(),
@@ -55,53 +61,31 @@ class User:
     
     def gen_age(self):
         return randrange(0,100)
-        
+
     def gen_profile(self):
         return "not yet implemented"
 
-"""   
-    def random_users(self,number):
-        uData=JsonFile.loadData("schemas/users_schema.json")
-        male_names=uData["male"]
-        female_names=uData["female"]
-        Gen_Users=[]
-        if(uData!=False and uData!={}): 
-            for i in range(number):
-                rand_gender=randrange(0,3)
-                if(rand_gender==0):
-                    user=User.gen_fulluser(male_names)
-                else:
-                    user=User.gen_fulluser(female_names)
-                Gen_Users.append(user)
-        else:
-            print("Error while getting usernames and domains from ./schemas/users_schema.json")
-            Messages.warning("Got {d} while loading user schema ".format(d=uData))
-            Gen_Users=False
-        return Gen_Users
-    
-    
-    def random_users_profiles(self,number):
-        rusers=User.random_users(number)
-        rusersprofiles=[]
-        if(rusers!=False):
-            for user in rusers:
-                rusersprofiles+=[
-                    {
-                        "firsname":user["firstname"],
-                        "lastname":user["lastname"],
-                        "email":user["email"],
-                        "profile":"/images/one.png"
-                    }
-                ]
-        return rusersprofiles
+class Product:
+    def __init__(self):
+        self.dataset=JsonFile.loadData("./schemas/reviews.json")
+    def gen_fullProduct(self):
+        num_reviews=RandomFigures.randomFigure(0,5)
+        product={
+            "name":"Random Product",
+            "price":RandomFigures.randomFigure(1,300),
+            "weight":RandomFigures.randomFigure(1,200),
+            "numReviews":num_reviews,
+            "reviews":self.gen_productReviews(num_reviews)
+            "shipping":RandomFigures.randomFigure(10,100),
+        }
+        return product
+    def gen_productReviews(self,number):
+        reviews=[]
+        ##push reviews to array
+        return reviews
 
-    
-    def export_data(self,data):
-        f=JsonFile.exportJson(filepath="./genericdata/users.json",data=data)
-        if(f==False):
-            Messages.error(message="Could not export users data to ./genericdata/users.json",log=True)
-            Messages.error(message="Userdata -> {d}".format(d=data))
-            return False
-        else:
-            return True
-"""
+if __name__=="__main__":
+    #u=User()
+    #print(u.gen_fulluser())
+    p=Product()
+    print(p.gen_fullProduct())
