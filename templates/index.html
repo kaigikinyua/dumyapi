@@ -1,149 +1,141 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>OpenApi</title>
-    <link rel="stylesheet" href="../static/css/components/main.css">
-    <link rel="stylesheet" href="../static/css/components/navs.css">
-    <link rel="stylesheet" href="../static/css/pages/index.css">
-    <link rel="stylesheet" href="../static/css/all.min.css">
-</head>
-<body>
-    <div class="topnav topnavshow" id="topnav">
-        <div class="container">
-            <div class="barner">
-                <img src="../static/images/logo.png" alt="" class="logo">
-                <h3 class="barner">OpenAPI</h3>
-            </div>
-            <ul class="links">
-                <a href="genericdata.html"><li>GenericData</li></a>
-                <a href="mydb.html"><li>MyDB</li></a>
-            </ul>
-        </div>
-    </div>
-    <header class="landing" style="background-image: url('../static/images/landing_page.png');">
-        <div class="container">
-            <div class="text">
-                <h3 class="super_title">Welcome to OpenAPI</h3>
-                <p class="large">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus cum fugiat, ullam id ad amet laudantium, magnam nam quisquam eaque laboriosam maxime illum libero nisi officia. Illum, delectus molestiae.
-                </p>
-                <div class="call_to_action">
-                    <button class="btn-callToAction"><i class="fab fa-github"></i></button>
-                    <button class="btn-callToAction"><i class="fab fa-twitter"></i></button>
+{% extends './base.html'%}
+    {% block css %}
+        <link rel="stylesheet" href="../static/css/pages/index.css">
+    {% endblock css %}
+    {% block searchmeta %}{% endblock searchmeta%}
+
+    {% block barner%}
+        <img src="../static/images/logo.png" alt="" class="logo">
+        <h3 class="barner">OpenAPI</h3>
+    {% endblock %}
+    {% block links %}
+        <ul class="links">
+            <a href="/genericdata"><li>GenericData</li></a>
+            <a href="mydb.html"><li>MyDB</li></a>
+        </ul>
+    {% endblock %}
+    {% block app %}
+        <header class="landing" style="background-image: url('../static/images/landing_page.png');">
+            <div class="container">
+                <div class="text">
+                    <h3 class="super_title">Welcome to OpenAPI</h3>
+                    <p class="large">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus cum fugiat, ullam id ad amet laudantium, magnam nam quisquam eaque laboriosam maxime illum libero nisi officia. Illum, delectus molestiae.
+                    </p>
+                    <div class="call_to_action">
+                        <button class="btn-callToAction"><i class="fab fa-github"></i></button>
+                        <button class="btn-callToAction"><i class="fab fa-twitter"></i></button>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="../static/images/logo.png" alt="" class="card">
                 </div>
             </div>
-            <div class="image">
-                <img src="../static/images/logo.png" alt="" class="card">
-            </div>
-        </div>
-    </header>
-    <section class="full about">
-        <div class="container">
-            <h3 class="title">Use Cases</h3>
-            <div class="card_container">
-                <div class="usecase">
-                    <h3 class="sub_title">UseCase Title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
-                    <!--i.fa.fa-icon-->
-                </div>
-                <div class="usecase">
-                    <h3 class="sub_title">UseCase Title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
-                    <!--i.fa.fa-icon-->
-                </div>
-                <div class="usecase">
-                    <h3 class="sub_title">UseCase Title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
-                    <!--i.fa.fa-icon-->
-                </div>
-                <div class="usecase">
-                    <h3 class="sub_title">UseCase Title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
-                    <!--i.fa.fa-icon-->
-                </div>
-                <div class="usecase">
-                    <h3 class="sub_title">UseCase Title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
-                    <!--i.fa.fa-icon-->
-                </div>
-                <div class="usecase">
-                    <h3 class="sub_title">UseCase Title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
-                    <!--i.fa.fa-icon-->
+        </header>
+        <section class="full about">
+            <div class="container">
+                <h3 class="title">Use Cases</h3>
+                <div class="card_container">
+                    <div class="usecase">
+                        <h3 class="sub_title">UseCase Title</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
+                        <!--i.fa.fa-icon-->
+                    </div>
+                    <div class="usecase">
+                        <h3 class="sub_title">UseCase Title</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
+                        <!--i.fa.fa-icon-->
+                    </div>
+                    <div class="usecase">
+                        <h3 class="sub_title">UseCase Title</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
+                        <!--i.fa.fa-icon-->
+                    </div>
+                    <div class="usecase">
+                        <h3 class="sub_title">UseCase Title</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
+                        <!--i.fa.fa-icon-->
+                    </div>
+                    <div class="usecase">
+                        <h3 class="sub_title">UseCase Title</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
+                        <!--i.fa.fa-icon-->
+                    </div>
+                    <div class="usecase">
+                        <h3 class="sub_title">UseCase Title</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, deserunt.</p>
+                        <!--i.fa.fa-icon-->
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--section.quick_start-->
-    <section class="full generic_Data">
-        <div class="container" id="generic_data_container">
-            <h3 class="title">Generic Data</h3>
-            <div class="card_container">
-                <div class="usecase">
-                    <h3 class="sub_title">R_Users</h3>
-                    <p class="big_number" data-curr="3450">0</p>
-                    <i class="fa fa-user"></i>
-                </div>
-                <div class="usecase">
-                    <h3 class="sub_title">R_Products</h3>
-                    <p class="big_number" data-curr="21304">0</p>
-                    <i class="fa fa-building"></i>
-                </div>
-                <div class="usecase">
-                    <h3 class="sub_title">R_Bank</h3>
-                    <p class="big_number" data-curr="30000">0</p>
-                    <i class="fa fa-coins"></i>
+        </section>
+        <!--section.quick_start-->
+        <section class="full generic_Data">
+            <div class="container" id="generic_data_container">
+                <h3 class="title">Generic Data</h3>
+                <div class="card_container">
+                    <div class="usecase">
+                        <h3 class="sub_title">R_Users</h3>
+                        <p class="big_number" data-curr="3450">0</p>
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="usecase">
+                        <h3 class="sub_title">R_Products</h3>
+                        <p class="big_number" data-curr="21304">0</p>
+                        <i class="fa fa-building"></i>
+                    </div>
+                    <div class="usecase">
+                        <h3 class="sub_title">R_Bank</h3>
+                        <p class="big_number" data-curr="30000">0</p>
+                        <i class="fa fa-coins"></i>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="full">
-        <div class="container">
-            <h3 class="title">Quick Start</h3>
-            <div class="quick_start">
-                <div class="instruction">
-                    <p>Say you want have a website where you want to list some dummy users to see whether your css holds up.</p>
-                    <p>All you need to do is to create an ajax request to the url https://openapi.heroku.com/genericdata/users/100</p>
+        </section>
+        <section class="full">
+            <div class="container">
+                <h3 class="title">Quick Start</h3>
+                <div class="quick_start">
+                    <div class="instruction">
+                        <p>Say you want have a website where you want to list some dummy users to see whether your css holds up.</p>
+                        <p>All you need to do is to create an ajax request to the url https://openapi.heroku.com/genericdata/users/100</p>
+                    </div>
+                    <pre>
+                        fetch('https://openapi.heroku.com/genericdata/users/100')
+                        .then((res)=>res.json())
+                        .then(data=>callback(data))
+                        .catch(e=>{
+                            Messages.error("Could not fetch data from endpoint")
+                            console.error(e)
+                            console.log("Could not fetch from endpoint https://openapi.heroku.com/genericdata/users/100")
+                        })<br/>
+                    </pre>
+                    <div class="instruction">
+                        <p>Some other genenric data include</p>
+                        <ul class="list">
+                            <li>Products</li>
+                            <li>Reviews</li>
+                            <li>Songs thumbnails</li>
+                            <li>Video thumbnails</li>
+                        </ul>
+                        <p>All the generic data can be accessed via the url https://openapi.heroku.com/genericdata/[genertic_data_name]/[number]</p>
+                    </div>
+                    <pre>
+                        [generic_data_name] -> this is the name of the generic data you want.
+                        It should be lower case. You can refer to the list above for the available generic data samples
+                        [number]-> this is self explanatory but for documentation purposes it is the number of items of the generic data you need.
+                    </pre>
                 </div>
-                <pre>
-                    fetch('https://openapi.heroku.com/genericdata/users/100')
-                    .then((res)=>res.json())
-                    .then(data=>callback(data))
-                    .catch(e=>{
-                        Messages.error("Could not fetch data from endpoint")
-                        console.error(e)
-                        console.log("Could not fetch from endpoint https://openapi.heroku.com/genericdata/users/100")
-                    })<br/>
-                </pre>
-                <div class="instruction">
-                    <p>Some other genenric data include</p>
-                    <ul class="list">
-                        <li>Products</li>
-                        <li>Reviews</li>
-                        <li>Songs thumbnails</li>
-                        <li>Video thumbnails</li>
-                    </ul>
-                    <p>All the generic data can be accessed via the url https://openapi.heroku.com/genericdata/[genertic_data_name]/[number]</p>
-                </div>
-                <pre>
-                    [generic_data_name] -> this is the name of the generic data you want.
-                    It should be lower case. You can refer to the list above for the available generic data samples
-                    [number]-> this is self explanatory but for documentation purposes it is the number of items of the generic data you need.
-                </pre>
+            </div>
+        </section>
+        <div class="footer">
+            <div class="container dual_flex">
+                <div class="info"><small>Open API</small></div>
+                <ul class="links">
+                    <a href="#"><li>github</li></a>
+                </ul>
             </div>
         </div>
-    </section>
-    <div class="footer">
-        <div class="container dual_flex">
-            <div class="info"><small>Open API</small></div>
-            <ul class="links">
-                <a href="#"><li>github</li></a>
-            </ul>
-        </div>
-    </div>
-</body>
-<script src="../static/js/ui.js"></script>
-<script src="../static/js/pages/index.js"></script>
-</html>
+        <script src="../static/js/ui.js"></script>
+        <script src="../static/js/pages/index.js"></script>
+    {% endblock %}

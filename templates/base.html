@@ -3,13 +3,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>OpenApi</title>
+    <title>OpenApi | {%block pagename%}{% endblock %}</title>
     <link rel="stylesheet" href="../static/css/components/main.css">
     <link rel="stylesheet" href="../static/css/components/navs.css">
-    <link rel="stylesheet" href="../static/css/pages/index.css">
+    <link rel="stylesheet" href="../static/css/all.min.css">
+    {% block css %}{% endblock css %}
+    {% block searchmeta %}{% endblock searchmeta %}
 </head>
 <body>
-    <div class="topnav" id="topnav">
+    <div class="topnav topnavshow" id="topnav">
         <div class="container">
             <div class="barner">
                 <h3 class="barner">
@@ -34,6 +36,7 @@
             </ul>
         </div>
     </div>
+    {% block footer %}{% endblock footer %}
 </body>
 <script src="../static/js/ui.js"></script>
 </html>

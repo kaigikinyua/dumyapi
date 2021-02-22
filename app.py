@@ -20,7 +20,8 @@ def getdata(genericdata,number=100):
     data=GenericData.genericDataActions(genericdata,int(number))
     response={}
     if(data!={} and data!=False and data!=None):
-        response=jsonify({data,"endpoint":"/getdata/{gd}/[number]".format(gd=genericdata)})
+        data+=[{"endpoint":"/getdata/{gd}/[number]".format(gd=genericdata)}]
+        response=jsonify({data})
     else:
         #run diagnostics on generic data - new thread or process
         #log the error to a file
