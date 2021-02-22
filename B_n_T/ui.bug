@@ -8,3 +8,7 @@ eB:
 sB: Quick Start quide is quite unpleasing
 eB:
 
+sB: Fetch request to server in the genericdata.js needs to be intergrated to fetch from flask server
+eB:
+
+
