@@ -1,2 +1,30 @@
 1.0.0
-    Dummy User 
+    Features
+        1. Variety of dummy data
+            - User [firstname,lastname,email,password,profile]
+            - User payment
+            - User location [username,longitude,latitude]
+            - User Reviews
+            - Products data [ pid,name,price,photos] 
+            - Sales data [pid,name,price,sales_perday for 1 month]
+            - Video thumbnail [ videoname,user,views,likes,dislikes, <reviews>]
+            - Music thumbnail [ songname,artist,album,likes,dislikes,<reviews>]
+        2. API endpoints
+        3. Download <generic_data_filename>.json
+        4.Documentation
+2.0.0
+    Features
+        1. Dummy Bank 
+            - Be able to create a user of a bank and transfer funds from one user 
+            to the next dummy user
+            -Create a dummy user by just using a post request of [username,email,password,amount of funds]
+            -You can log in onto the dummy bank account to see transfers
+            -You can use a default user set by the dummy bank
+
+3.0.0
+    Features
+        1. My data
+            - Create your own json api data structure and be able to populate it on the site
+            - Secure your data using a passwors/key
+            - Share a url for 24hrs to the data and set permisions edit permisions
+    
