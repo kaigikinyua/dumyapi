@@ -10,10 +10,6 @@ def index():
 def generic_data_page():
     return render_template('genericdata.html')
 
-@app.route('/mydb/<action>')
-def mydb(action):
-    return render_template("mydb.html")
-
 #api endpoints
 @app.route('/getdata/<genericdata>/<number>')
 def getdata(genericdata,number=100):
@@ -27,25 +23,6 @@ def getdata(genericdata,number=100):
         #log the error to a file
         response=jsonify({"state":"error","genericdata":{},"message":"There seems to be an error getting generic data {g}".format(g=genericdata)})
     return response
-
-#fake bank
-"""
-@app.route('/fakebank')
-def fakebankIndex():
-    return 
-@app.route('/fakebank/pay',[POST])
-def pay():
-    return 
-"""
-
-
-
-"""
-future features
-#mydb
-    --create a json file and customize the populated data
-    --protect file with key
-"""
 
 if __name__=="__main__":
     app.run(debug=True)
