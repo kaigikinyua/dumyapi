@@ -1,0 +1,32 @@
+[
+    {
+        "endpoint":"/getdata/<genericdata>/<number>",
+        "explanation":"",
+        "sub_urls":[
+            {
+                "name":"<genericdata>",
+                "values":[
+                    "fullusers",
+                    "dummyuserbanking",
+                    "dummyuserlocation",
+                    "dummyuserprofiles",
+                    "dummyuserreviews",
+                    "fullproduct",
+                    "glassproduct",
+                    "salesdata",
+                    "thumbnails",
+                    "lists",
+                    "images"
+                ]
+            }
+        ]
+    },
+    {
+        "endpoint":"",
+        "explanation":""
+    },
+    {
+        "endpoint":"",
+        "explanation":""
+    }
+]
