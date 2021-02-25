@@ -1,0 +1,14 @@
+sB: Index links are spaced wrongly
+    dB: They are too close together
+eB:
+
+sB: Scripts are not loading on the index page
+eB:
+
+sB: Quick Start quide is quite unpleasing
+eB:
+
+sB: Fetch request to server in the genericdata.js needs to be intergrated to fetch from flask server
+eB:
+
+

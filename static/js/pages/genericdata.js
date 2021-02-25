@@ -34,4 +34,9 @@ function fetch_Data(url,callback){
         console.log(e)
         //show error notification
     })
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> master

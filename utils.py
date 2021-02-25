@@ -2,7 +2,11 @@
 Utility functions to be used by the scripts to manage various resources
 and keep the scripts consistent
 """
+<<<<<<< HEAD
 import json,requests,os,random
+=======
+import json,requests,os
+>>>>>>> master
 class Files:
     def __init__(self,filepath):
         self.filepath=filepath
@@ -131,11 +135,14 @@ class Logs:
         if(res!=False):
             Messages.printMessage(Messages.FAIL,'[Err]',"Could not log event to logs")
 
+<<<<<<< HEAD
 class RandomFigures:
     @staticmethod
     def randomFigure(min=0,max=1000000000):
         return random.randrange(min,max)
 
+=======
+>>>>>>> master
 #advanced feature for populating websites
 """class Requests:
     @staticmethod
