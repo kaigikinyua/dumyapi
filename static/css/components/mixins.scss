@@ -1,0 +1,44 @@
+//variables
+    //colors
+    $darkbg:darken(#444795,30%);
+    $lightbg:darken(#444795,20%);
+    $neutral:#444795;
+
+//z-indexes
+$nav_prim:10;
+$nav_sec:12;
+$cast_shadow:11;
+$notification:13;
+//positioning mixins
+@mixin center_h{
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+}
+@mixin center_v{
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+}
+@mixin center_s{
+    position: relative;
+    left:50%;top:50%;
+    transform: translate(-50%,-50%);
+}
+
+//component mixins
+@mixin button {
+    padding:10px;
+    border:1px solid transparent;
+    outline:none;
+}
+
+//animations
+//animations
+@keyframes revealFromTop{
+    0%{
+        top:-100%;
+    }100%{
+        top:0px;
+    }
+}

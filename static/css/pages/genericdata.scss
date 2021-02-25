@@ -1,0 +1,39 @@
+@import '../components/mixins.scss';
+body{
+    overflow: hidden;
+}
+#app{
+    position: relative;
+    height: 85vh;
+    width:100vw;
+    @include center_s;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.data_list{
+    margin:10px;
+}
+.list{
+    padding:10px;
+}
+ul{
+    list-style-type: none;
+    li{
+        padding:10px;
+    }
+}
+div.barner{
+    padding:10px;
+}
+#selected_data{
+    position: relative;
+    height:100%;
+    div.sect{
+        padding:10px;
+    }
+}
+div.resources{
+    position: relative;
+    overflow-y:scroll;
+    height:80%;
+}

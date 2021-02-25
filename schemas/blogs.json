@@ -1,0 +1,16 @@
+{
+    "blogs":[
+        {
+            "title":"Web Development For beginners",
+            "author":"Arachnid Spider",
+            "date":"10/May/2010",
+            "likes":114,"dislikes":21,"comments":50,
+            "views":200,
+            "thumb_nail":"",
+            "paragraphs":[
+                {"p_title":"Lorem Ipsum","par":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod numquam adipisci, ratione veniam dolorem animi ad sapiente eum, reiciendis debitis et, unde praesentium repellat corrupti soluta. Dignissimos reiciendis aliquid voluptatem."},
+                {"p_title":"Static Files","par":"Static Files"}
+            ]
+        }
+    ]
+}

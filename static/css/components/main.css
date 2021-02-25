@@ -1,0 +1,114 @@
+@-webkit-keyframes revealFromTop {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes revealFromTop {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: Arial;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  letter-spacing: 2px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.barner {
+  font-weight: lighter;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+img.logo {
+  height: 30px;
+  width: 30px;
+}
+
+.super_title {
+  font-size: 4em;
+  letter-spacing: 3px;
+  margin: 20px 0px;
+}
+
+.title {
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  margin: 10px 0px;
+}
+
+.small {
+  font-size: 0.8em;
+  font-weight: lighter;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+p.large {
+  font-size: 1.5em;
+}
+
+.btn-btn {
+  padding: 10px;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+button.btn-callToAction {
+  padding: 10px;
+  border: 1px solid transparent;
+  outline: none;
+  font-size: 30px;
+  background: lightseagreen;
+  color: white;
+  border-radius: 10px;
+}
+
+.container {
+  width: 1500px;
+}
+
+.dual_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+ul.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  list-style: none;
+  font-size: 1.1em;
+}
+/*# sourceMappingURL=main.css.map */

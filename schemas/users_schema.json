@@ -1,0 +1,53 @@
+{
+    "male":[
+        {
+            "first":[
+                {"name":"James"},{"name":"Kevin"},{"name":"Richard"},{"name":"Jeremy"},{"name":"Alex"},
+                {"name":"John"},{"name":"Jim"},{"name":"Arnold"},{"name":"Clark"},
+                {"name":"Casper"},{"name":"Moses"},{"name":"Abraham"},{"name":"Antony"},
+                {"name":"Junior"},{"name":"Stanley"},{"name":"Lewis"},{"name":"Handsome"}
+            ]
+        },
+        {
+            "last":[
+                {"name":"Clark"},{"name":"Hammond"},{"name":"Clarkson"},{"name":"May"},{"name":"Hamilton"},
+                {"name":"Kent"},{"name":"Lincon"},{"name":"Schwatsniger"},{"name":"Einstein"},
+                {"name":"Suskin"},{"name":"Hamburger"},{"name":"Buggy"},{"name":"Stalion"},
+                {"name":"Tlkmuch"},{"name":"Schewpid"}
+            ]
+        }
+        
+    ],
+    "female":[
+        {
+            "first":[
+                {"name":"Jane"},{"name":"Kimberly"},{"name":"Ruth"},{"name":"Venus"},{"name":"Ann"},
+                {"name":"June"},{"name":"Lisa"},{"name":"Roselyne"},{"name":"Medussa"},{"name":"Anna"},
+                {"name":"April"},{"name":"Lucy"},{"name":"Daisy"},{"name":"Beautiful"},{"name":"Hannah"},
+                {"name":"May"},{"name":"Leah"},{"name":"Rosemary"},{"name":"Kim"},{"name":"Lispah"}
+            ]
+        },
+        {
+            "last":[
+                {"name":"Clark"},{"name":"Hammond"},{"name":"Clarkson"},{"name":"May"},{"name":"Hamilton"},
+                {"name":"Kent"},{"name":"Lincon"},{"name":"Schwatsniger"},{"name":"Einstein"},
+                {"name":"Suskin"},{"name":"Hamburger"},{"name":"Buggy"},{"name":"Stalion"},
+                {"name":"Tlkmuch"},{"name":"Schewpid"}
+            ],
+            "note_to_self":"search for girls last names"
+        }   
+    ],
+    "emails":[
+            {"domain":"@example.com"},
+            {"domain":"@testmail.com"},
+            {"domain":"@gen.com"},
+            {"domain":"@mars.gov"},
+            {"domain":"@fun.org"},
+            {"domain":"@dev.org"}
+    ],
+    "charcters":[
+        {"alpha":"abcdefghijklmnopqrstuvwxyz"},
+        {"numbers":"1234567890"},
+        {"special":"!@#$%^&*()"}
+    ]
+}

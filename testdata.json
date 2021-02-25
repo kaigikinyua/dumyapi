@@ -1,0 +1,8 @@
+{
+    "title":"Generic Test Data",
+    "endpoint":"https://localhost:5000/testdata.json",
+    "data":[
+        {"username": "Kimberly Tlkmuch", "firstname": "Kimberly", "lastname": "Tlkmuch", "email": "kimberlytlkmuch@example.com", "password": "abcdefghijklmnopqrst12345678!@#$", "phone": "+3628527252"},
+        {"username": "Rosemary Einstein", "firstname": "Rosemary", "lastname": "Einstein", "email": "rosemaryeinstein@dev.org", "password": "abcdefghijklm12345678!@#$%", "phone": "+4340795988"}
+    ]
+}
