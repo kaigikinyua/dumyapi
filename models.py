@@ -8,6 +8,14 @@ from gen import User,UserReview,Blogs,List
 from mydb import UserDataBase
 class GenericData:
     @staticmethod
+    def listGenericDataFiles():
+        raw_files=os.listdir("./static/genericdata/")
+        files=[]
+        for f in raw_files:
+            x=f.split(".")
+            files+=[x[0]]
+        return files
+    @staticmethod
     def genericDataActions(action,number):
         if(action=="show"):
             return GenericData.show()

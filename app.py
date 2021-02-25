@@ -8,8 +8,9 @@ def index():
     
 @app.route('/genericdata')
 def generic_data_page():
-    return render_template('genericdata.html')
-
+    gDList=GenericData.listGenericDataFiles()
+    request_url="/static/genericdata"
+    return render_template('genericdata.html',gDList=gDList,rUrl=request_url)
 #api endpoints
 @app.route('/getdata/<genericdata>/<number>')
 def getdata(genericdata,number=100):
