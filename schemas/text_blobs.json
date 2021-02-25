@@ -14,58 +14,5 @@
   "short_par":[
     {"title":"","text":""},
     {"title":"","text":""}
-  ],
-  "list":["Huskel","CoffeeScript","TypeScript","Dart","Python","JavaScript","C","C++","C#","Java","F#","BashScript","BatchScript","PHP"],
-  "nested_lists":[
-      {
-        "name":"movies",
-        "list":[
-            {"name":"Iron Man","list":["Iron Man 1","Iron Man 2","Iron Man 3"]},
-            {"name":"Dark Knigt","list":["Dark Knigt","Dark Knight Rises"]},
-            {"name":"Superman"},
-            {"name":"Flash"},
-            {"name":"Angry Birds","list":["Angry Birds 1","Angry Birds 2"]},
-            {"name":"007","list":["Quantum of Solace","Skyfall"]},
-            {"name":"","list":[]}
-        ]
-      },
-      {
-        "name":"Games",
-        "list":[
-          {"name":"Need For Speed","list":["Most Wanted","Underground","Underground 2","Rally","Carbon","ProStreet"]},
-          {"name":"Mortal Kombat","list":["Shaulin Monks","1","2","3","4","5"]},
-          {"name":"Grand Theft Auto","list":["San Andreas","Liberty City","Vice City","Vice City Stories","IV"]}
-        ]
-      },
-      {
-        "name":"Continents",
-        "list":[
-          {
-            "name":"Africa",
-            "list":[
-              {"name":"Algeria","list":[]},
-              {"name":"Kenya","list":["Nairobi","Kisumu","Mombasa","Eldoret","Nakuru"]},
-              {"name":"Uganda","list":[""]},
-              {"name":"Tanzania","list":["Dar-salam","Zanzibar"]},
-              {"name":"Somalia","list":["Mogadishu"]},
-              {"name":"Nigeria","list":["Lagos"]}
-            ]
-          },
-          {
-            "name":"America",
-            "list":[
-              {"name":"United States of America",
-                "list":["Washington","New York","Los Angeles","Los Vegas","California","Texas","Virginia"]},
-              {"name":"Canada","list":[""]}
-            ]
-          },
-          {
-            "name":"Asia",
-            "list":[
-              {"name":"China","list":["Tokyo","Beijin","Wuhun"]}
-            ]
-          }
-        ]
-      }
-  ]  
+  ]
 }

@@ -1,0 +1,40 @@
+[
+    {
+        "name":"Countries",
+        "list":[
+            "Algeria",
+            "Angola",
+            "Britain",
+            "Canada",
+            "Kenya",
+            "Uganda",
+            "Tanzania",
+            "Chad",
+            "Brazil",
+            "China",
+            "Congo",
+            "Iraq"
+        ]
+    },
+    {
+        "name":"Continents",
+        "list":[
+            "Africa",
+            "North America",
+            "South America",
+            "EuroAsia",
+            "Australia"
+        ]
+    },
+    {
+        "name":"Programming Languages",
+        "list":[
+            "C",
+            "C++",
+            "C#",
+            "Java",
+            "JavaScript",
+            "Python"
+        ]
+    }
+]
