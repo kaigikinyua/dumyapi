@@ -15,6 +15,10 @@
     {"title":"","text":""},
     {"title":"","text":""}
   ],
+  "long_par":[
+    {"title":"","text":""},
+    {"title":"","text":""}
+  ],
   "list":["Huskel","CoffeeScript","TypeScript","Dart","Python","JavaScript","C","C++","C#","Java","F#","BashScript","BatchScript","PHP"],
   "nested_lists":[
       {

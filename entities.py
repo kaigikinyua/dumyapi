@@ -65,6 +65,27 @@ class User:
     def gen_profile(self):
         return "not yet implemented"
 
+    def gen_address(self):
+        return "not yet implemented"
+
+class Location:
+    def __init__(self):
+        pass
+    
+    def gen_address(self):
+        self.data=JsonFile.loadData("./schemas/users_schema.json")
+        addresses=self.data["address"]
+        street=addresses[0]["streets"][randrange(0,len(addresses[0]["streets"]))]
+        building=addresses[1]["building"][randrange(0,len(addresses[1]["building"]))]
+        city=addresses[2]["city"][randrange(0,len(addresses[2]["city"]))]
+        return {"building":building,"street":street,"city":city}
+    
+    def gen_cordinates(self):
+        x=randrange(0,3600)
+        y=randrange(0,3600)
+        Messages.warning("Location.gencordinates not complete")
+        return {"longitude":float(x/100),"latitide":y/100}
+
 class Product:
     def __init__(self):
         self.dataset=JsonFile.loadData("./schemas/reviews.json")
@@ -75,7 +96,7 @@ class Product:
             "price":RandomFigures.randomFigure(1,300),
             "weight":RandomFigures.randomFigure(1,200),
             "numReviews":num_reviews,
-            "reviews":self.gen_productReviews(num_reviews)
+            "reviews":self.gen_productReviews(num_reviews),
             "shipping":RandomFigures.randomFigure(10,100),
         }
         return product
@@ -83,6 +104,25 @@ class Product:
         reviews=[]
         ##push reviews to array
         return reviews
+
+class TextBlob:
+    def __init__(self):
+        self.data=JsonFile.loadData("./schemas/text_blobs.json")
+    
+    def gen_paragraph(self,size="m"):
+        par={};dataset=[]
+        size=size.lower()
+        if(size=="m"):
+            dataset=self.data["medium_par"]
+        elif(size=="s"):
+            dataset=self.data["short_par"]
+        elif(size=="l"):
+            dataset=self.data["long_par"]
+        par=dataset[randrange(len(dataset))]
+        return par
+
+    def gen_List(self,l=10):
+        return self.data["list"]
 
 if __name__=="__main__":
     #u=User()

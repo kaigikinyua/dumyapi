@@ -2,10 +2,50 @@
 Tests
 """
 import unittest
-from gen import *
+from entities import *
+#from gen import *
+
+class EntitiesTest(unittest.TestCase):
+    def test_user(self):
+        u=User()
+        user=u.gen_fulluser()
+        print(user)
+        self.assertNotEqual(user,None)
+        self.assertEqual(type(user),type({}))
+
+    def test_location(self):
+        l=Location()
+        addr=l.gen_address()
+        cord=l.gen_cordinates()
+        print(addr)
+        print(cord)
+        self.assertEqual(type(addr),type({}))
+        self.assertEqual(type(cord),type({}))
+
+    def test_product(self):
+        p=Product()
+        full_prod=p.gen_fullProduct()
+        prod_reviews=p.gen_productReviews(3)
+        print(full_prod)
+        self.assertEqual(len(prod_reviews),3)
     
+    def test_textBlob(self):
+        tB=TextBlob()
+        lP=tB.gen_paragraph(size="l")
+        sP=tB.gen_paragraph(size="s")
+        mP=tB.gen_paragraph(size="m")
+        noParams=tB.gen_paragraph()
+        upperCaseParam=tB.gen_paragraph(size="L")
+        paragraphs=[lP,sP,mP,noParams,upperCaseParam]
+        for par in paragraphs:
+            self.assertEqual(type(par),type({}))
+            self.assertNotEqual(par,None)
+        lists=tB.gen_List(2)
+        print(lists)
+        self.assertNotEqual(len(lists),0)
+
 #code base tests
-class GenTest(unittest.TestCase):
+"""class GenTest(unittest.TestCase):
 #User Generation
     def test_randomUserGeneration(self):
         users=User.random_users(10)
@@ -41,6 +81,7 @@ class GenTest(unittest.TestCase):
         self.assertIsNotNone(randomPrdct)
         self.assertIsNotNone(allPrdct)
 
+"""
 class MyDBTest:
     pass
 

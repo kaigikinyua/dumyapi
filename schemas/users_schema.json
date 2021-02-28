@@ -49,5 +49,11 @@
         {"alpha":"abcdefghijklmnopqrstuvwxyz"},
         {"numbers":"1234567890"},
         {"special":"!@#$%^&*()"}
+    ],
+    "address":[
+        {"streets":["Mars Aoad","Sunshine Avenue","Mercury road","Venus Avenue","Jupiter Avenue","Neputune Street"]},
+        {"building":["BCOM","Leaky"]},
+        {"city":["city1","city2"]}
     ]
+
 }
