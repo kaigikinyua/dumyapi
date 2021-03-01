@@ -4,11 +4,10 @@ class User:
     def __init__(self):
         self.user_schema_path="./schemas/users_schema.json"
         self.dataset=JsonFile.loadData(self.user_schema_path)
-    
+
     def gen_fulluser(self):
         g=randrange(0,2)
         genders={0:"male",1:"female"}
-
         fNameSize=len(self.dataset[genders[g]][0]["first"])#-1
         lNameSize=len(self.dataset[genders[g]][1]["last"])#-1
         f_name=self.dataset[genders[g]][0]["first"][randrange(0,fNameSize)]["name"]
@@ -20,10 +19,39 @@ class User:
             "age":self.gen_age(),
             "password":self.gen_pass(8),
             "phone":self.gen_phone(10),
-            "profile":self.gen_profile(),
+            "profile_pic":self.gen_profile(),
         }
         return user
     
+    def gen_userLogin(self):
+        u=self.gen_fulluser()
+        return {
+            "username":u["username"],
+            "email":u["email"],
+            "password":u["password"]
+        }
+
+    def gen_userProfile(self):
+        u=self.gen_fulluser()
+        return {
+            "profile_pic":u["profile_pic"],
+            "addess":self.gen_address(),
+            "phone":u["phone"],
+            "age":u["age"],
+            "email":u["email"]
+        }
+
+    def gen_userReview(self):
+        reviews=JsonFile.loadData("./schemas/reviews.json")
+        u=self.gen_userProfile()
+        posOrNeg=randrange(0,2)
+        r=reviews["reviews"][posOrNeg]["review"]
+        review=r[randrange(len(r))]
+        return {
+            "user":u,
+            "review":review
+        }
+
     def gen_pass(self,size):
         password=None
         characters=JsonFile.fetchField('schemas/users_schema.json','charcters')
@@ -38,7 +66,6 @@ class User:
             password=False
         return password
 
-    
     def gen_email(self,f_name,l_name):
         domains=self.dataset["emails"]
         email=None
@@ -49,7 +76,6 @@ class User:
         else:
             email=False
         return email
-
     
     def gen_phone(self,size):
         phone=""
@@ -57,10 +83,12 @@ class User:
             phone+=(str(randrange(0,10)))
         phone="+"+str(phone)
         return phone
-
     
     def gen_age(self):
         return randrange(0,100)
+
+    def gen_review(self):
+        pass
 
     def gen_profile(self):
         return "not yet implemented"
