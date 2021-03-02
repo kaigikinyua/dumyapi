@@ -1,65 +1,67 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>OpenApi</title>
-    <link rel="stylesheet" href="../static/css/all.min.css">
-    <link rel="stylesheet" href="../static/css/components/main.css">
-    <link rel="stylesheet" href="../static/css/components/navs.css">
-    <link rel="stylesheet" href="../static/css/pages/genericdata.css">
-</head>
-<body>
-    <div class="topnav">
-        <div class="container">
-            <div class="barner">
-                <h3 class="barner">Generic Data</h3>
-            </div>
-            <ul class="links">
-                <a href="/"><li><i class="fa fa-home"></i></li></a>
-                <a href="/mydb"><li>MyDB</li></a>
-            </ul>
-        </div>
-    </div>
-    <div class="sidenav">
-        <div class="barner"></div>
-        <div class="menu"></div>
-        <div class="footer"></div>
-    </div>
-    <div class="app" id="app">
-        <div class="data_list">
-            <div class="barner">
-                <h3 class="barner">Data List</h3>
-            </div>
-            <div class="list">
-                <ul id="data_list">
-                    <li onclick="updateGenericData()">One</li>
-                    <li>One</li>
-                    <li>Two</li>
-                </ul>
-            </div>
-        </div>
-        <div class="data" id="selected_data">
-            <div class="barner">
-                <h3 class="title">[[title]]</h3>
-                <h3 class="title small">Endpoint <i>[[endpoint]]</i></h3>
-            </div>
-            <div class="resources" id="data_resources">
-                <!--endpoint from vue-->
-                <div class="sect">
-                    <h3 class="title">Structure</h3>
-                    <p>[[ raw_data[0] ]]</p>
+{% extends './base.html'%}
+    {% block css %}
+        <link rel="stylesheet" href="../static/css/pages/genericdata.css">   
+        <style>
+            section.app{
+                height:100vh;
+            }
+            ul#data_list li{
+                /*first letter to uppercase*/
+            }
+        </style> 
+    {% endblock css %}
+    {% block searchmeta %}{% endblock searchmeta %}
+
+    {% block barner %}
+        <h3 class="barner">Generic Data</h3>
+    {% endblock barner %}
+
+    {% block links %}
+        <ul class="links">
+            <a href="/"><li><i class="fa fa-home"></i></li></a>
+            <a href="/mydb"><li>MyDB</li></a>
+        </ul>
+        
+    {% endblock links%}
+
+    {% block app %}
+        <div class="app" id="app">
+            <div class="data_list">
+                <div class="barner">
+                    <h3 class="barner">Data List</h3>
                 </div>
-                <div class="sect">
-                    <h3 class="title">Raw Data</h3>
-                    <code class="data">
-                        <p v-for="object in raw_data">[[object]]</p>
-                    </code>
+                <div class="list">
+                    <ul id="data_list">
+                        {% for file in gDList %}
+                            <li onclick="updateGenericData('{{rUrl}}/{{file}}.json')">{{file}}</li>
+                        {% endfor %}
+                        <!--<li onclick="updateGenericData()">One</li>
+                        <li>One</li>
+                        <li>Two</li>-->
+                    </ul>
                 </div>
             </div>
+            <div class="data" id="selected_data">
+                <div class="barner">
+                    <h3 class="title">[[title]]</h3>
+                    <h3 class="title small">Endpoint <i>[[endpoint]]</i></h3>
+                </div>
+                <div class="resources" id="data_resources">
+                    <!--endpoint from vue-->
+                    <div class="sect">
+                        <h3 class="title">Structure</h3>
+                        <p>[[ raw_data[0] ]]</p>
+                    </div>
+                    <div class="sect">
+                        <h3 class="title">Raw Data</h3>
+                        <code class="data">
+                            <p v-for="object in raw_data">[[object]]</p>
+                        </code>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</body>
-<script src="../static/js/vue.js"></script>
-<script src="../static/js/pages/genericdata.js"></script>
-</html>
+        <script src="../static/js/vue.js"></script>
+        <script src="../static/js/pages/genericdata.js"></script>
+    {% endblock app %}
+

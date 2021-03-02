@@ -1,3 +1,4 @@
+var mainUrl="http://localhost:5000"
 var generic_data=new Vue({
     el:"#selected_data",
     delimiters:['[[',']]'],
@@ -11,20 +12,21 @@ var generic_data=new Vue({
     },
 })
 //update the generic data
-function updateGenericData(){
-    fetch_Data("http://localhost:5500/testdata.json",
+function updateGenericData(subURL){
+    fetch_Data(`${mainUrl}/${subURL}`,
     (state,data)=>{
-        if(state==true){
-            generic_data.title=data.title
-            generic_data.endpoint=data.endpoint
-            generic_data.raw_data=data.data
-        }
+        console.log(data)
+        // if(state==true){
+        //     generic_data.title=data.title
+        //     generic_data.endpoint=data.endpoint
+        //     generic_data.raw_data=data.data
+        // }
     })
 }
 
 function fetch_Data(url,callback){
     fetch(url)
-    .then(res=>res.json())
+    .then(res=>{res.json();console.log(res)})
     .then(data=>{
         console.log(data)
         callback(true,data)
