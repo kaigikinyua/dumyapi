@@ -150,7 +150,9 @@ class TextBlob:
         return par
 
     def gen_List(self,l=10):
-        return self.data["list"]
+        list_data=JsonFile.loadData("./schemas/lists.json")
+        Messages.warning("Radomize the gen_List method")
+        return list_data["list"][0:l]
 
 if __name__=="__main__":
     #u=User()

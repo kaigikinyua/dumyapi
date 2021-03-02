@@ -4,7 +4,7 @@ Serialization of data to be consumed by user requests
 """
 import os
 from utils import JsonFile,Messages
-from gen import User,UserReview,Blogs,List
+from gen import UserGen,Blogs,List
 from mydb import UserDataBase
 class GenericData:
     @staticmethod
