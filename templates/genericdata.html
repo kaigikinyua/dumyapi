@@ -42,9 +42,12 @@
                 </div>
             </div>
             <div class="data" id="selected_data">
-                <div class="barner">
+                <div class="appbar">
                     <h3 class="title">[[title]]</h3>
-                    <h3 class="title small">Endpoint <i>[[endpoint]]</i></h3>
+                    <div class="endpoint">
+                        <h3 class="title small">Endpoint <i>[[endpoint]]</i></h3>
+                        <a v-bind:href="[[endpoint]]" download><button class="download"><i class="fa fa-download"></i></button></a>
+                    </div>
                 </div>
                 <div class="resources" id="data_resources">
                     <!--endpoint from vue-->

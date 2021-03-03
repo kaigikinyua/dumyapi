@@ -3,25 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
     <title>OpenApi</title>
     <link rel="stylesheet" href="../static/css/components/main.css">
     <link rel="stylesheet" href="../static/css/components/navs.css">
-    <link rel="stylesheet" href="../static/css/pages/index.css">
+    {% block css %}{% endblock css%}
 </head>
 <body>
     <div class="topnav" id="topnav">
-=======
-    <title>OpenApi | {%block pagename%}{% endblock %}</title>
-    <link rel="stylesheet" href="../static/css/components/main.css">
-    <link rel="stylesheet" href="../static/css/components/navs.css">
-    <link rel="stylesheet" href="../static/css/all.min.css">
-    {% block css %}{% endblock css %}
-    {% block searchmeta %}{% endblock searchmeta %}
-</head>
-<body>
-    <div class="topnav topnavshow" id="topnav">
->>>>>>> master
         <div class="container">
             <div class="barner">
                 <h3 class="barner">
@@ -46,13 +34,6 @@
             </ul>
         </div>
     </div>
-<<<<<<< HEAD
 </body>
 <script src="../static/js/ui.js"></script>
 </html>
-=======
-    {% block footer %}{% endblock footer %}
-</body>
-<script src="../static/js/ui.js"></script>
-</html>
->>>>>>> master

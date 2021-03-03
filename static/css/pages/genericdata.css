@@ -18,6 +18,8 @@
 
 body {
   overflow: hidden;
+  background: #14152c;
+  color: white;
 }
 
 #app {
@@ -51,8 +53,14 @@ ul li {
   padding: 10px;
 }
 
-div.barner {
+div.appbar {
   padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #selected_data {
@@ -68,5 +76,21 @@ div.resources {
   position: relative;
   overflow-y: scroll;
   height: 80%;
+}
+
+div.endpoint {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+button.download {
+  padding: 10px;
+  border: 1px solid transparent;
+  outline: none;
+  padding: 10px;
+  font-size: 1.2em;
+  color: white;
+  background: none;
 }
 /*# sourceMappingURL=genericdata.css.map */
