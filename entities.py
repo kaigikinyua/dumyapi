@@ -5,13 +5,17 @@ class User:
         self.user_schema_path="./schemas/users_schema.json"
         self.dataset=JsonFile.loadData(self.user_schema_path)
 
-    def gen_fulluser(self):
+    def gen_username(self):
         g=randrange(0,2)
         genders={0:"male",1:"female"}
         fNameSize=len(self.dataset[genders[g]][0]["first"])#-1
         lNameSize=len(self.dataset[genders[g]][1]["last"])#-1
         f_name=self.dataset[genders[g]][0]["first"][randrange(0,fNameSize)]["name"]
         l_name=self.dataset[genders[g]][1]["last"][randrange(0,lNameSize)]["name"]
+        return f_name,l_name
+
+    def gen_fulluser(self):
+        f_name,l_name=self.gen_username()
         user={
             "username":"{f} {l}".format(f=f_name,l=l_name),
             "firstname":f_name,"lastname":l_name,
@@ -45,7 +49,7 @@ class User:
         reviews=JsonFile.loadData("./schemas/reviews.json")
         u=self.gen_userProfile()
         posOrNeg=randrange(0,2)
-        r=reviews["reviews"][posOrNeg]["review"]
+        r=reviews["reviews"][posOrNeg]["users_reviews"]
         review=r[randrange(len(r))]
         return {
             "user":u,
@@ -86,9 +90,6 @@ class User:
     
     def gen_age(self):
         return randrange(0,100)
-
-    def gen_review(self):
-        pass
 
     def gen_profile(self):
         return "not yet implemented"
@@ -154,8 +155,39 @@ class TextBlob:
         Messages.warning("Radomize the gen_List method")
         return list_data["list"][0:l]
 
+class Blog:
+    def __init__(self):
+        pass
+    def random_Blog(self,paragraphs=10,reviews=10):
+        par=[]
+        sizes=['s','m','l']
+        t=TextBlob()
+        while paragraphs>0:
+            r=randrange(0,len(sizes))
+            par+=[t.gen_paragraph(sizes[r])]
+            paragraphs-=1
+        user=User()
+        user_reviews=[]
+        while(reviews>0):
+            user_reviews+=[user.gen_userReview()]
+            reviews-=1
+        fname,lname=user.gen_username()
+        return {
+            "author":"{f} {l}".format(f=fname,l=lname),
+            "published":"{dd}/{mm}/{yyyy}".format(dd=randrange(1,29),mm=randrange(1,13),yyyy=randrange(1992,2100)),
+            "title":par[0]["title"],
+            "paragraphs":par,
+            "reviews":user_reviews,
+            "likes":randrange(0,1000),
+            "dislikes":randrange(0,100),
+        }
+        
+
+
 if __name__=="__main__":
     #u=User()
     #print(u.gen_fulluser())
-    p=Product()
-    print(p.gen_fullProduct())
+    #p=Product()
+    #print(p.gen_fullProduct())
+    b=Blog()
+    print(b.random_Blog(10,10))
