@@ -1,5 +1,6 @@
 from utils import Messages,JsonFile
 from gen import *
+from entities import Blog
 def export_decorator(function):
     def inner_function(*args,**kwargs):
         Messages.warning("Running {f}\n".format(f=function.__name__))
@@ -32,9 +33,14 @@ class Export:
     @staticmethod
     @export_decorator
     def cache_blogs(number):
+        blogs=[]
+        b=Blog()
+        while number>0:
+            blogs+=[b.random_Blog()]
+            number-=1
         return {
             "filename":"blogs.json",
-            "data":"Test Export data"
+            "data":blogs
         }
 
     @staticmethod
@@ -44,8 +50,7 @@ class Export:
             "filename":"products.json",
             "data":"Test export data"
         }
-
 if __name__=="__main__":
-    Export.cache_users(10)
-    Export.cache_blogs(15)
-    Export.cache_products(20)
+    Export.cache_users(100)
+    Export.cache_blogs(1)
+    Export.cache_products(100)
