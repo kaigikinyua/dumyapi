@@ -111,6 +111,9 @@ class Messages:
     def printMessage(mess_col,messagetype,message):
         print("{mc} {mt} {m} {c}".format(mc=mess_col,mt=messagetype,m=message,c=Messages.ENDC))
     @staticmethod
+    def cliInput(message):
+        Messages.printMessage(Messages.OKCYAN,"{m}\n".format(m=message))
+    @staticmethod
     def logEvent(message,logtype="error"):
         l=Logs(logtype)
         l.log(message)

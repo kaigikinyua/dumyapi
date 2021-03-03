@@ -73,6 +73,7 @@ class Blogs:
             Messages.error("Got {r} while retriving blog snippets".format(r=data))
             snippets=None
         return snippets
+
     @staticmethod
     def randomBlog():
         blog=Blogs.blogSnippets(1)
@@ -83,6 +84,7 @@ class Blogs:
             blog[0]["paragraphs"]=paragraphs
             blog[0]["comments"]=UserReview.random_reviews(3)
         return blog[0]
+    
 
 class Products:
     @staticmethod
