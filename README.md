@@ -1,5 +1,9 @@
 # Dummy Data Generator
-![Screenshot](./assets/dummy_logo_64x64.png)
+
+<p align='center'>
+    <img src="https://github.com/kaigikinyua/dumyapi/assets/dummy_logo_64x64.png"/>
+</p>
+
 ## What is it?
 
 The dummy data api is in the name. Get random dummy data to your front end without 
