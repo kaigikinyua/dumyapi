@@ -1,8 +1,6 @@
 # Dummy Data Generator
 
-<p align='center'>
-    <img src="https://github.com/kaigikinyua/dumyapi/assets/dummy_logo_64x64.png"/>
-</p>
+![Screenshot](./assets/dummy_logo_64x64.png)
 
 ## What is it?
 
