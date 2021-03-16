@@ -99,7 +99,8 @@ class User:
         return "/static/images/profiles/{i}".format(i=profiles[rand_profile])
 
     def gen_address(self):
-        return "not yet implemented"
+        l=Location()
+        return l.gen_address()
 
 class Location:
     def __init__(self):
@@ -111,7 +112,7 @@ class Location:
         street=addresses[0]["streets"][randrange(0,len(addresses[0]["streets"]))]
         building=addresses[1]["building"][randrange(0,len(addresses[1]["building"]))]
         city=addresses[2]["city"][randrange(0,len(addresses[2]["city"]))]
-        return {"building":building,"street":street,"city":city}
+        return "{b},{s},{c}".format(b=building,c=city,s=street)
     
     def gen_cordinates(self):
         x=randrange(0,3600)

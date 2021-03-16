@@ -20,7 +20,7 @@ class EntitiesTest(unittest.TestCase):
         cord=l.gen_cordinates()
         Messages.success("\nPrinting generated address \n {l}\n".format(l=str(addr)))
         Messages.success("\nPrinting generated coordinates \n {l}\n".format(l=str(cord)))
-        self.assertEqual(type(addr),type({}))
+        self.assertEqual(type(addr),str)
         self.assertEqual(type(cord),type({}))
 #product
     def test_product(self):

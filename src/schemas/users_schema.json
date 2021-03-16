@@ -51,9 +51,9 @@
         {"special":"!@#$%^&*()"}
     ],
     "address":[
-        {"streets":["Mars Aoad","Sunshine Avenue","Mercury road","Venus Avenue","Jupiter Avenue","Neputune Street"]},
-        {"building":["BCOM","Leaky"]},
-        {"city":["city1","city2"]}
+        {"streets":["Mars Road","Sunshine Avenue","Mercury road","Venus Avenue","Jupiter Avenue","Neputune Street"]},
+        {"building":["COM Plaza","Leaky Building","Mega Plaza","Jinja Building","Mango Plaza","Banana Building"]},
+        {"city":["Nairobi","Kinsasha","Tokyo","Beijin","New York"]}
     ]
 
 }
