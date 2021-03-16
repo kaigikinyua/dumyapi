@@ -40,7 +40,7 @@ class EntitiesTest(unittest.TestCase):
         for par in paragraphs:
             self.assertEqual(type(par),type({}))
             self.assertNotEqual(par,None)
-        lists=tB.gen_List(2)
+        lists=tB.gen_List(l=2)
         Messages.success("Printing generated list {l}".format(l=str(lists)))
         self.assertNotEqual(len(lists),0)
 
@@ -61,7 +61,7 @@ class GenTest(unittest.TestCase):
     
     def test_random_user_reviews(self):
         users=UserGen.gen_user_reviews(10)
-        Messages.success("\nPrinting generated reviews\n {l} \n".format(l=str(users)))
+        #Messages.success("\nPrinting generated reviews\n {l} \n".format(l=str(users)))
         self.assertEqual(len(users),10)
 
 """#Users Reviews

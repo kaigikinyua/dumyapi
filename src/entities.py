@@ -156,8 +156,17 @@ class TextBlob:
 
     def gen_List(self,l=10):
         list_data=JsonFile.loadData("./schemas/lists.json")
-        Messages.warning("Radomize the gen_List method")
-        return list_data["list"][0:l]
+        countries=list_data[0]
+        continents=list_data[1]
+        pLanguages=list_data[2]
+        lists=[continents,pLanguages,countries]
+        for indexList in lists:
+            if(l<len(indexList["list"])):
+                return indexList["list"][0:l]
+
+        #Messages.warning("Radomize the gen_List method")
+
+        #return list_data["list"][0:l]
 
 class Blog:
     def __init__(self):
