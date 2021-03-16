@@ -4,7 +4,7 @@
 
 ## What is it?
 
-The dummy data api is in the name. Get random dummy data to your front end without 
+Well it's in the name. Get random dummy data to your front end without 
 the need of putting together a backend. A little json data is enough.
 
 ## Data Provided.
