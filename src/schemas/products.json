@@ -1,26 +1,23 @@
 [
     {
-        "category":"household",
-        "items":[
-            {"name":"","pictures":[]}
-        ]
-    },
-    {
-        "category":"electronics",
-        "items":[
-            {"name":"","pictures":[]}
-        ]
-    },
-    {
-        "category":"food",
-        "items":[
-            {"name":"","pictures":[]}
-        ]
-    },
-    {
-        "category":"drinks",
-        "items":[
-            {"name":"","pictures":[]}
+        "names":[
+            "Coffee Mug",
+            "Graphics Card",
+            "Computer Monitor",
+            "Router",
+            "Generic Laptop",
+            "Android Phone",
+            "Headphones",
+            "Water Bottle",
+            "Sport Shoes",
+            "Books",
+            "Cups",
+            "Plates",
+            "Car",
+            "Pens",
+            "Pencils",
+            "Desk",
+            "Chair"
         ]
     }
 ]

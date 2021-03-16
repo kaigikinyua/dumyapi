@@ -122,10 +122,15 @@ class Location:
 class Product:
     def __init__(self):
         self.dataset=JsonFile.loadData("./schemas/reviews.json")
+        self.productsList=JsonFile.loadData("./schemas/products.json")
+    
+    def gen_ProductName(self):
+        return self.productsList[0]["names"][randrange(0,len(self.productsList[0]["names"]))]
+
     def gen_fullProduct(self):
         num_reviews=RandomFigures.randomFigure(0,5)
         product={
-            "name":"Random Product",
+            "name":self.gen_ProductName(),
             "price":RandomFigures.randomFigure(1,300),
             "weight":RandomFigures.randomFigure(1,200),
             "numReviews":num_reviews,
@@ -133,8 +138,12 @@ class Product:
             "shipping":RandomFigures.randomFigure(10,100),
         }
         return product
+
     def gen_productReviews(self,number):
         reviews=[]
+        u=User()
+        for i in range(number):
+            reviews+=[u.gen_userReview()]
         ##push reviews to array
         return reviews
 
@@ -193,8 +202,6 @@ class Blog:
             "dislikes":randrange(0,100),
         }
         
-
-
 if __name__=="__main__":
     #u=User()
     #print(u.gen_fulluser())
