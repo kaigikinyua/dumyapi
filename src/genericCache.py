@@ -46,11 +46,16 @@ class Export:
     @staticmethod
     @export_decorator
     def cache_products(number):
+        products=[]
+        p=Product()
+        while number>0:
+            products+=[p.gen_fullProduct()]
+            number-=1
         return {
             "filename":"products.json",
-            "data":"Test export data"
+            "data":products
         }
 if __name__=="__main__":
-    Export.cache_users(100)
+    Export.cache_users(20)
     Export.cache_blogs(1)
-    Export.cache_products(100)
+    Export.cache_products(20)
