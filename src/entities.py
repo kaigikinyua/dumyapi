@@ -163,9 +163,7 @@ class TextBlob:
         for indexList in lists:
             if(l<len(indexList["list"])):
                 return indexList["list"][0:l]
-
         #Messages.warning("Radomize the gen_List method")
-
         #return list_data["list"][0:l]
 
 class Blog:
