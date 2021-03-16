@@ -1,5 +1,7 @@
+import os
 from random import randrange
 from utils import JsonFile,Messages,RandomFigures
+
 class User:
     def __init__(self):
         self.user_schema_path="./schemas/users_schema.json"
@@ -92,7 +94,9 @@ class User:
         return randrange(0,100)
 
     def gen_profile(self):
-        return "not yet implemented"
+        profiles=os.listdir('./static/images/profiles/')
+        rand_profile=randrange(0,len(profiles))
+        return "/static/images/profiles/{i}".format(i=profiles[rand_profile])
 
     def gen_address(self):
         return "not yet implemented"
