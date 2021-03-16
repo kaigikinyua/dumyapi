@@ -8,6 +8,13 @@
             ul#data_list li{
                 /*first letter to uppercase*/
             }
+            div.topnav{
+                max-height:50px;
+                overflow-y:hidden;
+            }
+            div.links{
+                padding:0px;
+            }
         </style> 
     {% endblock css %}
     {% block searchmeta %}{% endblock searchmeta %}
@@ -53,7 +60,7 @@
                     <!--endpoint from vue-->
                     <div class="sect">
                         <h3 class="title">Structure</h3>
-                        <p>[[ raw_data[0] ]]</p>
+                        <p>[[ structure ]]</p>
                     </div>
                     <div class="sect">
                         <h3 class="title">Raw Data</h3>

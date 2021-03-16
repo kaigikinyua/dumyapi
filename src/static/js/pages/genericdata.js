@@ -19,7 +19,7 @@ function updateGenericData(subURL){
     (state,data)=>{
         generic_data.raw_data=data
         generic_data.endpoint=endp
-        generic_data.structure=data[0]
+        generic_data.structure=data[Object.keys(data)][0]
     })
 }
 
