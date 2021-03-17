@@ -35,3 +35,15 @@ function fetch_Data(url,callback){
         //show error notification
     })
 }
+
+function objectArray(object){
+    if(Array.isArray(object)){
+        var elementKeys=[]
+        elementKeys=Object.keys(object[0])
+        elementKeys.forEach((elem)=>{
+            if(objectArray(object[0][elem]!=false)){elem=`${elem}:[]`}
+        })
+    }else{
+        return false;
+    }
+}
