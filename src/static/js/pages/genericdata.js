@@ -47,3 +47,7 @@ function objectArray(object){
         return false;
     }
 }
+
+function filterString(string){
+    
+}
