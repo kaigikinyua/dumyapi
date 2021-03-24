@@ -20,6 +20,7 @@ class GenericData:
         if(action=="show"):
             return GenericData.show()
         elif(action=="users"):
+            ##add userfullprofile,userauth,userreview
             return GenericData.users(number)
         elif(action=="userprofiles"):
             return GenericData.users_profiles(number)
@@ -30,11 +31,8 @@ class GenericData:
         elif(action=="blog"):
             return GenericData.randomBlog()
         elif(action=="list"):
+            ##country list,and normal list
             return GenericData.noramlList(number)
-        elif(action=="nestedlist"):
-            return GenericData.nestedList(number)
-        elif(action=="chat"):
-            pass
         else:
             Messages.error("Unknown generic data {d}".format(d=action),log=True)
             return None

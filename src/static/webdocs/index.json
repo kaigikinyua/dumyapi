@@ -1,0 +1,8 @@
+{
+    "topics":[
+        {"name":"Common Links","link":"/static/webdocs/commonlinks.json","desc":"Commonlu used apis"},
+        {"name":"Dummy user data","link":"/static/webdocs/userdata_schema.json","desc":"Generic dummy user data schema"},
+        {"name":"Dummy product data","link":"/static/webdocs/productsdata.json","desc":"Dummy product data schema"},
+        {"name":"Text Blobs","link":"/static/webdocs/textblobs.json","desc":"Dummy text blobs"}
+    ]
+}

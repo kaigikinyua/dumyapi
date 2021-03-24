@@ -1,0 +1,10 @@
+{
+    "title":"Common Links",
+    "last_updated":"24th Mar 2021",
+    "items":[
+        {"sub_title":"/getdata/<genericdata>/<number>","body":[""]},
+        {"sub_title":"/getdata/users/<number>","body":[""]},
+        {"sub_title":"/getdata/reviews/<number>","body":[""]},
+        {"sub_title":"/getdata/textbloblist/<number>","body":[""]}
+    ]
+}
