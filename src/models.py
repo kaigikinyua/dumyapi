@@ -1,3 +1,5 @@
+#rename to views.py
+
 """
 Various actions that can be processed by the backend
 Serialization of data to be consumed by user requests

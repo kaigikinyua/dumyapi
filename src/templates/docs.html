@@ -1,0 +1,39 @@
+{% extends '../base.html'%}
+{% title %} Documentation {% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="../static/css/pages/docsui/docs.css">
+{% endblock css%}
+
+{% block barner %} D.D.API Docs {% endblock barner %}
+
+{% block links %}
+    <a href="/"><li><i class="fa fa-home"></i></li></a>
+{% endblock links %}
+
+
+{% block app %}
+    <nav class="sidenav">
+        <div class="appbar">
+            <div class="search">
+                <i class="fa fa-search"></i>
+                <input name="search" id="search" placeholder="Search docs"/>
+            </div>
+        </div>
+        <div class="listview">
+            {% for doclink in docs %}
+                <div class="title" onclick="renderDoc('{{doclink.link}}')">
+                    <h1>{{ doclink.name }}</h1>
+                </div>
+            {% endfor %}
+        </div>
+    </nav>
+    <section class="doc">
+        <div class="appbar">
+            <h1 id="title"></h1>
+        </div>
+        <div class="content" id="content"></div>
+    </section>
+
+{% endblock app%}
+
+{% block scripts %}{% endblock scripts%}
