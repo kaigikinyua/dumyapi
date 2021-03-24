@@ -27,7 +27,7 @@
             {% endfor %}
         </div>
     </nav>
-    <section class="doc">
+    <section class="doc" id="docsview">
         <div class="appbar">
             <h1 id="title"></h1>
         </div>
@@ -36,4 +36,7 @@
 
 {% endblock app%}
 
-{% block scripts %}{% endblock scripts%}
+{% block scripts %}
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/js/pages/docsui/docs.js"></script>
+{% endblock scripts%}
