@@ -1,1 +1,105 @@
-/* No CSS *//*# sourceMappingURL=docs.css.map */
+@-webkit-keyframes revealFromTop {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes revealFromTop {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+body {
+  background: #0c0d1a;
+}
+
+section.app {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  height: 90vh;
+}
+
+nav.sidenav, section.doc {
+  padding: 10px;
+  margin-top: 50px;
+}
+
+nav.sidenav {
+  position: relative;
+  height: 100%;
+}
+
+nav.sidenav input {
+  padding: 5px;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+div.appbar {
+  background: #24264f;
+  color: white;
+  padding: 10px;
+}
+
+div.search {
+  padding: 5px;
+  background: white;
+  border-radius: 10px;
+}
+
+div.search i {
+  color: #14152c;
+}
+
+div.listview {
+  padding: 10px;
+  background: #343672;
+  position: relative;
+  height: 80%;
+  overflow-y: scroll;
+}
+
+div.tile {
+  padding: 10px;
+  color: #14152c;
+  background: white;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+div.tile h3 {
+  font-size: 1em;
+  font-weight: lighter;
+}
+
+div.content {
+  position: relative;
+  height: 90%;
+  width: 100%;
+  overflow-y: scroll;
+  background: white;
+}
+
+.sub_title {
+  padding: 10px;
+}
+
+.sub_title::before {
+  content: '# ';
+}
+
+p.par {
+  padding: 10px;
+  margin-bottom: 30px;
+}
+/*# sourceMappingURL=docs.css.map */

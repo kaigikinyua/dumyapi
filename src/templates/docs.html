@@ -22,17 +22,24 @@
         </div>
         <div class="listview">
             {% for doclink in docs %}
-                <div class="title" onclick="renderDoc('{{doclink.link}}')">
-                    <h1>{{ doclink.name }}</h1>
+                <div class="tile" onclick="renderDoc('{{doclink.link}}')">
+                    <h3>{{ doclink.name }}</h3>
                 </div>
             {% endfor %}
         </div>
     </nav>
     <section class="doc" id="docsview">
         <div class="appbar">
-            <h1 id="title"></h1>
+            <h1 id="title">[[ title ]]</h1>
         </div>
-        <div class="content" id="content"></div>
+        <div class="content" id="content">
+            <div class="item" v-for="item in content">
+                <h3 class="sub_title">[[item.sub_title]]</h3>
+                <p class="par" v-for="par in item.body">
+                    [[ par ]]
+                </p>
+            </div>
+        </div>
     </section>
 
 {% endblock app%}

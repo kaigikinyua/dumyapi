@@ -1,1 +1,71 @@
+@import '../../components/mixins.scss';
+body{
+    background:darken($darkbg,5%);
+}
+section.app{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height:90vh;
+}
+nav.sidenav,section.doc{
+    padding:10px;
+    margin-top:50px;
+}
 
+nav.sidenav{
+    position: relative;
+    height: 100%;
+    input{
+        padding:5px;
+        border:none;
+        outline: none;
+        background:none;
+    }
+}
+div.appbar{
+    background:$lightbg;
+    color:white;
+    padding:10px;
+}
+div.search{
+    padding:5px;
+    background:white;
+    border-radius: 10px;
+    i{color:$darkbg}
+}
+
+div.listview{
+    padding:10px;
+    background:lighten($lightbg,10%);
+    position: relative;
+    height:80%;
+    overflow-y:scroll;
+}
+div.tile{
+    padding:10px;
+    color:$darkbg;
+    background:white;
+    margin-top:10px;
+    border-radius: 10px;
+    h3{
+        font-size: 1em;
+        font-weight: lighter;
+    }
+}
+div.content{
+    position: relative;
+    height:90%;
+    width:100%;
+    overflow-y:scroll;
+    background: white;
+}
+.sub_title{
+    padding:10px;
+}
+.sub_title::before{
+    content: '# ';
+}
+p.par{
+    padding:10px;
+    margin-bottom: 30px;
+}
