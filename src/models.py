@@ -76,16 +76,16 @@ class GenericData:
     def noramlList(number):
         return List.simple_list(number)
 
-class MyDBActions:
-    @staticmethod
-    def createDB(dbname):
-        pass
-    @staticmethod
-    def populateDB(dbname):
-        pass
-    @staticmethod
-    def fetchData(database):
-        pass
-    @staticmethod
-    def userDBConfgs(configs):
-        pass
+# class MyDBActions:
+#     @staticmethod
+#     def createDB(dbname):
+#         pass
+#     @staticmethod
+#     def populateDB(dbname):
+#         pass
+#     @staticmethod
+#     def fetchData(database):
+#         pass
+#     @staticmethod
+#     def userDBConfgs(configs):
+#         pass
