@@ -1,0 +1,24 @@
+{
+    "title":"Dummy User Data",
+    "last_updated":"24th Mar 2021",
+    "items":[
+        {
+            "sub_title":"/users/fullusersprofiles/<number>",
+            "body":[
+                "This url is used to get a full random user[name, email, phone, age, profile picture, address] profile",
+                "It is important to emphasize this data is not accurate and does not represent and is not intended to represent any real life user.",
+                "The format of the data is generated to 'simulate' a user and not to represent a real life user",
+                "Such data can be helpful to applications dealing with different users socializing via applications",
+                "<number> - should be an integer indicating the number of random dummy users to get from the call"
+            ]
+        },
+        {
+            "sub_title":"/users/authdata/<number>",
+            "body":[
+                "If you would like to get a bunch of dummy user auth data [email:string, password:string, confirmpassword:string, password_match:boolean and username:string] this is the url for you",
+                "This data can be used to test your authentication and registration protocals on your backend to see if any user with unmatched passwords can register the 'password_match' can be used to crosscheck with your 'registered' dummy users",
+                "<number> - should be an integer indicating the number of random dummy users to get from the call"
+            ]
+        }
+    ]
+}

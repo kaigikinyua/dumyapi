@@ -1,0 +1,22 @@
+{
+    "title":"Dummy Products Data",
+    "last_updated":"24th Mar 2021",
+    "items":[
+        {
+            "sub_title":"/products/fullproducts/<number>",
+            "body":[
+                "This url is used to get a full random product[name, price, reviews, ratings, 1 photo].",
+                "Such data can be used when designing a product page for an ecomerce website",
+                "<number> - should be an integer indicating the number of random dummy products to get from the call"
+            ]
+        },
+        {
+            "sub_title":"/products/profileproduct/<number>",
+            "body":[
+                "If you would like to get a product list [product name,price, shipping cost and rating] you can use this url",
+                "This url is mainly recommended for product list show cases for the ecommerce websites",
+                "<number> - should be an integer indicating the number of random dummy products to get from the call"
+            ]
+        }
+    ]
+}
