@@ -3,9 +3,19 @@
     "last_updated":"24th Mar 2021",
     "items":[
         {
-            "sub_title":"/users/fullusersprofiles/<number>",
+            "sub_title":"/users/fullprofile/<number>",
             "body":[
                 "This url is used to get a full random user[name, email, phone, age, profile picture, address] profile",
+                "It is important to emphasize this data is not accurate and does not represent and is not intended to represent any real life user.",
+                "The format of the data is generated to 'simulate' a user and not to represent a real life user",
+                "Such data can be helpful to applications dealing with different users socializing via applications",
+                "<number> - should be an integer indicating the number of random dummy users to get from the call"
+            ]
+        },
+        {
+            "sub_title":"/users/miniprofile/<number>",
+            "body":[
+                "This url is used to get a full random user[name, email, profile picture] profile",
                 "It is important to emphasize this data is not accurate and does not represent and is not intended to represent any real life user.",
                 "The format of the data is generated to 'simulate' a user and not to represent a real life user",
                 "Such data can be helpful to applications dealing with different users socializing via applications",
