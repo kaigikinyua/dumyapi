@@ -75,24 +75,41 @@ p.big_number{
     font-size: 3em;
     font-family: monospace;
 }
-div.quick_start{
-    color:white;
-    div.instruction{
-        padding:10px;
-        margin:10px 0px;
-        position: relative;
-        @include center_h;
-        max-width: 800px;
 
+//slides
+div.slides{
+    display: flex;
+    flex-direction: row;
+    overflow-x:scroll;
+    height:100%;
+}
+div.slide{
+    position: relative;
+    height:100%;
+    width:100%;
+    flex-shrink: 0;
+    h3.title{
+        font-size: 3em;
+        color:white;
+        font-weight: lighter;
     }
-    pre{
-        text-align: left;
-        justify-content: left;
-        background:$lightbg;
-        margin:0px;
-        position: relative;
-        max-width: 300px;
-        @include center_h;
-        overflow-x: scroll;
+    div.slide_content{
+        padding:5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+        div{
+            position: relative;
+            top:50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            color:lightblue;
+            margin:20px 0px;
+            img.slide{
+                position: relative;
+                height:auto;
+                width:100%;
+            }
+        }   
     }
 }
