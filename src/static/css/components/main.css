@@ -32,6 +32,17 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: lightblue;
+  width: 7px;
+  border-radius: 4px;
+}
+
 .barner {
   font-weight: lighter;
   font-size: 1.1em;
@@ -89,7 +100,7 @@ button.btn-callToAction {
 }
 
 .container {
-  width: 1500px;
+  width: 1000px;
 }
 
 .dual_flex {

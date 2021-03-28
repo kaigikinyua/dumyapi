@@ -13,6 +13,15 @@ a{
 body{
     overflow-x:hidden;
 }
+::-webkit-scrollbar{
+    width:5px;
+    background:none;
+}
+::-webkit-scrollbar-thumb{
+    background:lightblue;
+    width:7px;
+    border-radius: 4px;
+}
 //fonts
 .barner{
     font-weight: lighter;
@@ -67,7 +76,7 @@ button.btn-callToAction{
 //.h-light{}
 //re-useable components
 .container{
-    width: 1500px;
+    width: 1000px;
 }
 .dual_flex{
     display: flex;

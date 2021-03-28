@@ -81,13 +81,16 @@ div.slides{
     display: flex;
     flex-direction: row;
     overflow-x:scroll;
+    overflow-y:hidden;
     height:100%;
+    scroll-snap-type: x mandatory;
 }
 div.slide{
     position: relative;
     height:100%;
     width:100%;
     flex-shrink: 0;
+    scroll-snap-align:center;
     h3.title{
         font-size: 3em;
         color:white;
@@ -100,11 +103,13 @@ div.slide{
         overflow: hidden;
         div{
             position: relative;
+            overflow: hidden;
             top:50%;
             transform: translateY(-50%);
             font-size: 1.5em;
             color:lightblue;
             margin:20px 0px;
+            text-align: left;
             img.slide{
                 position: relative;
                 height:auto;
