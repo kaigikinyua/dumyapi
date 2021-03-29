@@ -51,8 +51,6 @@ def getProducts(scope='full',number=10):
         pass
     return jsonify(productData)
 
-
-
 #documentation
 @app.route('/documentation')
 def documentation():
