@@ -75,7 +75,8 @@ div.appbar {
 div.resources {
   position: relative;
   overflow-y: scroll;
-  height: 80%;
+  height: 70vh;
+  margin-bottom: 100px;
 }
 
 div.endpoint {
@@ -92,5 +93,25 @@ button.download {
   font-size: 1.2em;
   color: white;
   background: none;
+}
+
+pre.data {
+  position: relative;
+  width: 50vw;
+  overflow-x: scroll;
+}
+
+pre.data i.square {
+  color: lightseagreen;
+  font-style: normal;
+}
+
+pre.data i.curly {
+  color: crimson;
+  font-style: normal;
+}
+
+div.footer {
+  display: none;
 }
 /*# sourceMappingURL=genericdata.css.map */

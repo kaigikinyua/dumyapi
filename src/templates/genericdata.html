@@ -24,11 +24,8 @@
     {% endblock barner %}
 
     {% block links %}
-        <ul class="links">
-            <a href="/"><li><i class="fa fa-home"></i></li></a>
-            <a href="/mydb"><li>MyDB</li></a>
-        </ul>
-        
+        <a href="/"><li><i class="fa fa-home"></i></li></a>
+        <a href="/mydb"><li>MyDB</li></a>
     {% endblock links%}
 
     {% block app %}
@@ -40,7 +37,7 @@
                 <div class="list">
                     <ul id="data_list">
                         {% for file in gDList %}
-                            <li onclick="updateGenericData('{{rUrl}}/{{file}}.json')">{{file}}</li>
+                            <li onclick="updateGenericData('{{file}}','{{rUrl}}/{{file}}.json')">{{file}}</li>
                         {% endfor %}
                         <!--<li onclick="updateGenericData()">One</li>
                         <li>One</li>
@@ -58,15 +55,16 @@
                 </div>
                 <div class="resources" id="data_resources">
                     <!--endpoint from vue-->
-                    <div class="sect">
+                    <!--<div class="sect">
                         <h3 class="title">Structure</h3>
                         <p>[[ structure ]]</p>
-                    </div>
+                    </div>-->
                     <div class="sect">
                         <h3 class="title">Raw Data</h3>
-                        <code class="data">
-                            <p v-for="object in raw_data">[[object]]</p>
-                        </code>
+                        <pre class="data" id="data">
+                            
+                        </pre>
+                        <div style="height:100px"></div>
                     </div>
                 </div>
             </div>
