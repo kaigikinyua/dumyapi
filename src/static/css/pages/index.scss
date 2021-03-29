@@ -61,8 +61,8 @@ div.card_container{
 div.usecase{
     padding:10px;
     flex-shrink: 0;
-    width:250px;
-    height: 150px;
+    width:200px;
+    height: 200px;
     background:white;
     border-radius: 20px;
     margin:5px 5px;
@@ -70,6 +70,9 @@ div.usecase{
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
+    i.fa{
+        font-size: 3em;
+    }
 }
 p.big_number{
     font-size: 3em;
