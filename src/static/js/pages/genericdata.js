@@ -42,31 +42,28 @@ function fetch_Data(url,callback){
 }
 
 function jsonLinter(dataString){
-    var stack=[];var lintedString='';
+    var square_stack=[];curly_stack=[];
+    var lintedString='';
     for(var i=0;i<dataString.length;i++){
         var char=dataString[i]
         if(char=='['){
             //:[ | [
-            stack.push(char)
-            lintedString+=`<i class="square">${char}</i>\n${tabs(stack.length+1)}`
+            lintedString+=`${tabs(square_stack.length)}<i class="square">${char}</i>\n${tabs(square_stack.length+1)}`
+            square_stack.push(char)
         }else if(char=='{'){
             //:{} | {
-            lintedString+=`<i class="curly">${char}</i> `
-            stack.push(char)
+            lintedString+=`<i class="curly">${char}</i>\n${tabs(square_stack.length+1)}`
+            curly_stack.push(char)
         }else if(char=='}'){
             // }, | }
-            if(stack[stack.length-1]=='{'){
-                lintedString+=`\n${tabs(stack.length+1)}<i class="curly">${char}</i>`
-                stack.pop()
-            }else{
-                lintedString+=`\n${tabs(stack.length-1)}<i class="curly">${char}</i> `
-            }
+            lintedString+=`\n${tabs(square_stack.length+1)}<i class="curly">${char}</i>`
+
         }else if(char==']'){
             // ], | ]
-            lintedString+=`\n${tabs(stack.length)}<i class='square'>${char}</i>`
-            stack.indexOf(']')
+            lintedString+=`\n${tabs(square_stack.length)}<i class='square'>${char}</i>\n`
+            square_stack.pop()
         }else if(char==','){
-            lintedString+=`${char}\n${tabs(stack.length+1)}`
+            lintedString+=`${char}\n${tabs(square_stack.length+1)}`
         }else if(char==':'){
             lintedString+=` ${char} `
         }
@@ -75,7 +72,6 @@ function jsonLinter(dataString){
             lintedString+=char
         }
     }
-    console.log(lintedString)
     return lintedString
 }
 function tabs(number){

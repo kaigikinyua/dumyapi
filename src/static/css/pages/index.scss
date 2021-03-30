@@ -12,11 +12,19 @@ header.landing{
     .container{
         height:70%;
         @include center_s;
-        background:rgba(10, 10, 10, 0.6);
         color:white;
         padding:20px;
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+    div.text{
+        background:rgba(10, 10, 10, 0.8);
+    }
+    div.image{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background:rgba(10, 10, 10, 0.2);
     }
 }
 section.full{

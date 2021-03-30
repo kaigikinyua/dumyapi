@@ -36,13 +36,30 @@ header.landing .container {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background: rgba(10, 10, 10, 0.6);
   color: white;
   padding: 20px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
+}
+
+header.landing div.text {
+  background: rgba(10, 10, 10, 0.8);
+}
+
+header.landing div.image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(10, 10, 10, 0.2);
 }
 
 section.full {
