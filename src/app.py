@@ -15,12 +15,12 @@ def generic_data_page():
     return render_template('genericdata.html',gDList=gDList,rUrl=request_url)
 
 #generic data endpoint
-@app.route('/getdata/<genericdata>/<number>')
+@app.route('/getgenericdatacache/<genericdata>/<number>')
 def getdata(genericdata,number=100):
     data=GenericData.genericDataActions(genericdata,int(number))
     response={}
     if(data!={} and data!=False and data!=None):
-        data+=[{"endpoint":"/getdata/{gd}/[number]".format(gd=genericdata)}]
+        data+=[{"endpoint":"/getgenericdatacache/{gd}/[number]".format(gd=genericdata)}]
         response=jsonify({data})
     else:
         #run diagnostics on generic data - new thread or process

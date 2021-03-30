@@ -3,9 +3,13 @@
     "last_updated":"24th Mar 2021",
     "items":[
         {
-            "sub_title":"/getdata/<genericdata>/<number>",
+            "sub_title":"/getgenericdatacache/<genericdata>/<number>",
             "body":[
-                "<genericdata> - can be 'users','reviews','textbloblist'"
+                "<genericdata> - can be 'userProfile','usersAuth','reviews','blog','bloglist','list'",
+                "'userProfile' ->returns an object containing a list of dummy users profiles<br/> { 'users':[{'username':'name','profile':'https://linktoimage','email':'email@email.com'}]}",
+                "'userAuth' ->returns an object of containing a list of dummy users auth data. The schema is <br/>{ 'users':[{'username':'exampleuser','email':'example@ddapi.com','password':'examplepassword'}] }",
+                "'reviews' -> returns a list of reviews from different users with the schema being <br/>{'reviews':[{'username':'name','email':'email@email.com','profile':'https://linktoimage','review':'users review here','likes':'dislikes'}]}",
+                "'blog' -> represent a blog and has the schema that looks like <br/>{'blogs':[{'author':'exampleauthorname','published':'DD/MM/YYYY','title':'Blog title','paragraphs':['Par1','Par2',...,ParN]},'reviews':[{'user':{'profile_pic',:'linktoimage','username':'username'},'review':{'review':'This is the users review','date':'DD/MM/YYYY','time':'HH:MM','likes':Number,dislikes:Number}}...],'likes':Number,dislikes:Number]}"
             ]
         },
         {"sub_title":"/getdata/users/<number>","body":[""]},

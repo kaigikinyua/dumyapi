@@ -57,7 +57,8 @@ function jsonLinter(dataString){
         }else if(char=='{'){
             //:{} | {
             curly_open.push(char)
-            lintedString+=`<i class="curly">${char}</i>\n${tabs(square_stack.length+1)}`
+            var diff=curly_close.length-curly_open.length
+            lintedString+=`${tabs(diff)}<i class="curly">${char}</i>\n${tabs(square_stack.length+1)}`
         }else if(char=='}'){
             // }, | }
             curly_close.push(char)

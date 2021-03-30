@@ -21,11 +21,13 @@ class GenericData:
     def genericDataActions(action,number):
         if(action=="show"):
             return GenericData.show()
-        elif(action=="users"):
+        elif(action=="usersAuth"):
             ##add userfullprofile,userauth,userreview
             return GenericData.users(number)
-        elif(action=="userprofiles"):
+        elif(action=="userProfiles"):
             return GenericData.users_profiles(number)
+        elif(action=='productList'):
+            pass
         elif(action=="reviews"):
             return GenericData.usersReviews(number)
         elif(action=="bloglist"):
