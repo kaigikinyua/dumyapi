@@ -42,7 +42,7 @@ function fetch_Data(url,callback){
 }
 
 function jsonLinter(dataString){
-    var square_stack=[];curly_stack=[];
+    var square_stack=[];curly_open=[],curly_close=[];
     var lintedString='';
     for(var i=0;i<dataString.length;i++){
         var char=dataString[i]
@@ -50,18 +50,19 @@ function jsonLinter(dataString){
             //:[ | [
             lintedString+=`${tabs(square_stack.length)}<i class="square">${char}</i>\n${tabs(square_stack.length+1)}`
             square_stack.push(char)
-        }else if(char=='{'){
-            //:{} | {
-            lintedString+=`<i class="curly">${char}</i>\n${tabs(square_stack.length+1)}`
-            curly_stack.push(char)
-        }else if(char=='}'){
-            // }, | }
-            lintedString+=`\n${tabs(square_stack.length+1)}<i class="curly">${char}</i>`
-
         }else if(char==']'){
             // ], | ]
             lintedString+=`\n${tabs(square_stack.length)}<i class='square'>${char}</i>\n`
             square_stack.pop()
+        }else if(char=='{'){
+            //:{} | {
+            curly_open.push(char)
+            lintedString+=`<i class="curly">${char}</i>\n${tabs(square_stack.length+1)}`
+        }else if(char=='}'){
+            // }, | }
+            curly_close.push(char)
+            var diff=curly_open.length-curly_close.length
+            lintedString+=`\n${tabs(square_stack.length+diff-1)}<i class="curly">${char}</i>`
         }else if(char==','){
             lintedString+=`${char}\n${tabs(square_stack.length+1)}`
         }else if(char==':'){
