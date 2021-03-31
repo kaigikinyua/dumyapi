@@ -17,6 +17,18 @@
                 "This url is mainly recommended for product list show cases for the ecommerce websites",
                 "<number> - should be an integer indicating the number of random dummy products to get from the call"
             ]
+        },
+        {
+            "sub_title":"/products/productreviews/<number>",
+            "body":[
+                "Get product reviews in a list"
+            ]
+        },
+        {
+            "sub_title":"/products/images/<number>",
+            "body":[
+                "Get a random list of product images"
+            ]
         }
     ]
 }
