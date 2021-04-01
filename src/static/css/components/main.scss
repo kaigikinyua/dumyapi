@@ -76,7 +76,9 @@ button.btn-callToAction{
 //.h-light{}
 //re-useable components
 .container{
-    width: 1000px;
+    position: relative;
+    width:80vw;
+    max-width:1500px;
 }
 .dual_flex{
     display: flex;
