@@ -3,6 +3,13 @@
     "last_updated":"24th Mar 2021",
     "items":[
         {
+            "sub_title":"",
+            "body":[
+                "We mainly advise that you use this links since the data is already generated and stored in json files hence the term 'generic data cache'",
+                "However, this may not be as flexible as you need it be and if you find yourself in such a situation you can visit the other urls to generate a new batch of fresh data"
+            ]
+        },
+        {
             "sub_title":"/getgenericdatacache/<genericdata>/<number>",
             "body":[
                 "<genericdata> - can be 'userProfile','usersAuth','reviews','blog','bloglist','list'",
@@ -12,8 +19,30 @@
                 "'blog' -> represent a blog and has the schema that looks like <br/>{'blogs':[{'author':'exampleauthorname','published':'DD/MM/YYYY','title':'Blog title','paragraphs':['Par1','Par2',...,ParN]},'reviews':[{'user':{'profile_pic',:'linktoimage','username':'username'},'review':{'review':'This is the users review','date':'DD/MM/YYYY','time':'HH:MM','likes':Number,dislikes:Number}}...],'likes':Number,dislikes:Number]}"
             ]
         },
-        {"sub_title":"/getdata/users/<number>","body":[""]},
-        {"sub_title":"/getdata/reviews/<number>","body":[""]},
-        {"sub_title":"/getdata/textbloblist/<number>","body":[""]}
+        {
+            "sub_title":"/getgenericdatacache/usersprofile/<number>",
+            "body":[
+                "This url is used to get a full random user[name, email, phone, age, profile picture, address] profile",
+                "It is important to emphasize this data is not accurate and does not represent and is not intended to represent any real life user.",
+                "The format of the data is generated to 'simulate' a user and not to represent a real life user",
+                "Such data can be helpful to applications dealing with different users socializing via applications",
+                "<number> - should be an integer indicating the number of random dummy users to get from the call"
+            ]
+        },
+        {
+            "sub_title":"/getgenericdatacache/usersauth/<number>",
+            "body":[
+                "If you would like to get a bunch of dummy user auth data [email:string, password:string, confirmpassword:string, password_match:boolean and username:string] this is the url for you",
+                "This data can be used to test your authentication and registration protocals on your backend to see if any user with unmatched passwords can register the 'password_match' can be used to crosscheck with your 'registered' dummy users",
+                "<number> - should be an integer indicating the number of random dummy users to get from the call"
+            ]
+        },
+        {
+            "sub_title":"/getgenericdatacache/productslist/<number>",
+            "body":[""]
+        },
+        {
+            "sub_title":"/getgenericdatacache/blogs/<number>","body":[""]
+        }
     ]
 }
