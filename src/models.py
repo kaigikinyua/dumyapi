@@ -8,6 +8,9 @@ import os
 from utils import JsonFile,Messages
 from gen import UserGen,Blogs,List
 from mydb import UserDataBase
+class GenericDataConfigs:
+    cacheRoot="./static/genericdata/"
+
 class GenericData:
     @staticmethod
     def listGenericDataFiles():
@@ -23,19 +26,25 @@ class GenericData:
             return GenericData.show()
         elif(action=="usersAuth"):
             ##add userfullprofile,userauth,userreview
-            return GenericData.users(number)
+            #return GenericData.usersAuth(number)
+            return {"usersAuth":GenericData.fetchCache(GenericDataConfigs.cacheRoot+"user_auth.json","userAuth",number)}
         elif(action=="userProfiles"):
-            return GenericData.users_profiles(number)
+            #return GenericData.usersProfiles(number)
+            return {"usersProfiles":GenericData.fetchCache(GenericDataConfigs.cacheRoot+"user_profiles.json","profiles",number)}
+
         elif(action=='fullproduct'):
             pass
 
         elif(action=='productList'):
-            pass
-        
+            return {"productList":GenericData.fetchCache(GenericDataConfigs.cacheRoot+"products.json","productList",number)}
+
         elif(action=="reviews"):
-            return GenericData.usersReviews(number)
+            #return GenericData.usersReviews(number)
+            return {"reviews":GenericData.fetchCache(GenericDataConfigs.cacheRoot+"reviews.json","reviews",number)}
         elif(action=="bloglist"):
-            return GenericData.bloglist(number)
+            #return GenericData.bloglist(number)
+            return {"blogsnippets":GenericData.fetchCache(GenericDataConfigs.cacheRoot+"BlogListSnippets.json","blogSnippets",number)}
+
         elif(action=="blog"):
             return GenericData.randomBlog()
         elif(action=="list"):
@@ -54,16 +63,37 @@ class GenericData:
         return files_cleaned
 
     @staticmethod
-    def users(number):
-        users=JsonFile.loadData("./genericdata/users.json")
+    def fetchCache(filepath=None,key=None,number=1):
+        data=JsonFile.loadData(filepath)
+        if(data!=None and len(data)>0):
+            if(key==None):
+                return data
+            else:
+                if(len(data[key])<number):
+                    diff=number-len(data[key])
+                    data=data[key]
+                    while(diff>0):
+                        data+=data[0:number]
+                        diff=diff-number
+                    return data
+                else:
+                    return data[key][0:number]
+        else:
+            #add to logs filepath,key,number of datapoints requested
+            return False
+
+    @staticmethod
+    def usersAuth(number):
+        users=JsonFile.loadData("./genericdata/user_auth.json")
         if(users!={} and users!=False):
-            return users
+            return users["usersAuth"][0:number]
         else:
             return User.random_users(number)
 
     @staticmethod
-    def users_profiles(number):
+    def usersProfiles(number):
         #add local storage for users profile
+        users=JsonFile.loadData('')
         return User.random_users_profiles(number)
 
     @staticmethod

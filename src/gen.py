@@ -85,7 +85,6 @@ class Blogs:
             blog[0]["comments"]=UserReview.random_reviews(3)
         return blog[0]
     
-
 class Products:
     @staticmethod
     def getProductsInCategory(category):

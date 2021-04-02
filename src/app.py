@@ -26,9 +26,10 @@ def generated_data_page():
 def getdata(genericdata,number=100):
     data=GenericData.genericDataActions(genericdata,int(number))
     response={}
+    print(data)
     if(data!={} and data!=False and data!=None):
-        data+=[{"endpoint":"/getgenericdatacache/{gd}/[number]".format(gd=genericdata)}]
-        response=jsonify({data})
+        #data+=[{"endpoint":"/getgenericdatacache/{gd}/[number]".format(gd=genericdata)}]
+        response=jsonify(data)
     else:
         #run diagnostics on generic data - new thread or process
         #log the error to a file
