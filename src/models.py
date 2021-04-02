@@ -82,35 +82,6 @@ class GenericData:
             #add to logs filepath,key,number of datapoints requested
             return False
 
-    @staticmethod
-    def usersAuth(number):
-        users=JsonFile.loadData("./genericdata/user_auth.json")
-        if(users!={} and users!=False):
-            return users["usersAuth"][0:number]
-        else:
-            return User.random_users(number)
-
-    @staticmethod
-    def usersProfiles(number):
-        #add local storage for users profile
-        users=JsonFile.loadData('')
-        return User.random_users_profiles(number)
-
-    @staticmethod
-    def usersReviews(number):
-        return UserReview.random_reviews(number)
-    @staticmethod
-    def bloglist(number):
-        return Blogs.blogSnippets(number)
-    @staticmethod
-    def randomBlog():
-        return Blogs.randomBlog()
-    @staticmethod
-    def nestedList(number):
-        return List.nested_list(number)
-    @staticmethod
-    def noramlList(number):
-        return List.simple_list(number)
 
 # class MyDBActions:
 #     @staticmethod
