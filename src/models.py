@@ -26,8 +26,12 @@ class GenericData:
             return GenericData.users(number)
         elif(action=="userProfiles"):
             return GenericData.users_profiles(number)
+        elif(action=='fullproduct'):
+            pass
+
         elif(action=='productList'):
             pass
+        
         elif(action=="reviews"):
             return GenericData.usersReviews(number)
         elif(action=="bloglist"):

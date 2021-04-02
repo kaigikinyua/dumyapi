@@ -140,8 +140,20 @@ class List:
     @staticmethod
     def simple_list(number):
         l=List.fetch_lists("list")
+        response=None
         if(l!=False):
-            return l[0:number]
+            response=[]
+            if(number>len(l)):
+                diff=number-len(l)
+                while(diff>0):
+                    #opotimize to return exact number
+                    response+=l[0:number]
+                    diff=diff-len(l)
+            else:
+                response=l[0:number]
+        else:
+            response=False
+        return response
 
 class Analysis:
     @staticmethod

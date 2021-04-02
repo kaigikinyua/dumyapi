@@ -1,0 +1,15 @@
+generic data chached
+    /getgenericdatacache/<genericdata>/<number>
+
+    [implemented but not verified and chached]
+
+        /getgenericdatacache/userAuth/<number>
+        /getgenericdatacache/userProfiles/<number>
+        /getgenericdatacache/productList/<number>
+        /getgenericdatacache/reviews/<number>
+        /getgenericdatacache/bloglist/<number>
+        /getgenericdatacache/blog/<number>
+        /getgenericdatacache/list/<number>
+
+    [ not implemented ]
+        /getgenericdatacache/fullproduct/<number>
