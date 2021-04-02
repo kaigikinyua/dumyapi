@@ -1,0 +1,72 @@
+{% extends './base.html'%}
+    {% block css %}
+        <link rel="stylesheet" href="../static/css/pages/genericdata.css">   
+        <style>
+            section.app{
+                height:100vh;
+            }
+            ul#data_list li{
+                /*first letter to uppercase*/
+            }
+            div.topnav{
+                max-height:50px;
+                overflow-y:hidden;
+            }
+            div.links{
+                padding:0px;
+            }
+        </style> 
+    {% endblock css %}
+    {% block searchmeta %}{% endblock searchmeta %}
+
+    {% block barner %}
+        <h3 class="barner">Generated Data</h3>
+    {% endblock barner %}
+
+    {% block links %}
+        <a href="/"><li><i class="fa fa-home"></i></li></a>
+        <a href="/documentation"><li>Documentation</li></a>
+    {% endblock links%}
+
+    {% block app %}
+        <div class="app" id="app">
+            <div class="data_list">
+                <div class="barner">
+                    <h3 class="barner">Data List</h3>
+                </div>
+                <div class="list">
+                    <ul id="data_list">
+                        <!-- change display means to point to urls that generate data-->
+                        {% for file in gDList %}
+                            <li onclick="updateGenericData('{{file}}','{{rUrl}}/{{file}}.json')">{{file}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="data" id="selected_data">
+                <div class="appbar">
+                    <h3 class="title">[[title]]</h3>
+                    <div class="endpoint">
+                    
+                    </div>
+                </div>
+                <div class="resources" id="data_resources">
+                    <!--endpoint from vue-->
+                    <!--<div class="sect">
+                        <h3 class="title">Structure</h3>
+                        <p>[[ structure ]]</p>
+                    </div>-->
+                    <div class="sect">
+                        <h3 class="title">Raw Data</h3>
+                        <pre class="data" id="data">
+                            
+                        </pre>
+                        <div style="height:100px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/vue.js"></script>
+        <script src="../static/js/pages/generated_data.js"></script>
+    {% endblock app %}
+
