@@ -2,7 +2,7 @@
 Utility functions to be used by the scripts to manage various resources
 and keep the scripts consistent
 """
-import json,requests,os,random
+import json,os,random
 class Files:
     def __init__(self,filepath):
         self.filepath=filepath
