@@ -20,14 +20,23 @@ class CustomJson:
                         o=obj.split(":")
                         value=Parser.expandVariable(o[1])
                         if(obj==arrObjects[len(arrObjects)-1]):
-                            s+="{k}:'{v}'".format(k=o[0],v=value)
+                            s+="{k}:{v}".format(k=o[0],v=value)
                         else:
-                            s+="{k}:'{v}',".format(k=o[0],v=value)
+                            s+="{k}:{v},".format(k=o[0],v=value)
                     if(number==1):
                         s+="}"
                     else:
                         s+="},"
                     rep+=s
+                    number=number-1
+                datastringreplacements+=[{"variable":arr[1:len(arr)-1],"rep":rep}]
+            else:
+                rep=""
+                variable=var[0][1:len(var[0])]
+                while(number>0):
+                    rep+="{"+str(Parser.expandVariable(variable))+"}"
+                    if(number>1):
+                        rep+=","
                     number=number-1
                 datastringreplacements+=[{"variable":arr[1:len(arr)-1],"rep":rep}]
         objects=Parser.filterObjects(self.datastring)
@@ -89,18 +98,18 @@ class Variables:
         variabledata=None
         if(variable=="username"):
             f_name,lname=u.gen_username()
-            variabledata="{f} {l}".format(f=f_name,l=lname)
+            variabledata="'{f} {l}'".format(f=f_name,l=lname)
         elif(variable=="firstname"):
             f_name,lname=u.gen_username()
-            variabledata=f_name
+            variabledata="'{s}'".format(s=f_name)
         elif(variable=="lastname"):
             f_name,lname=u.gen_username()
-            variabledata=lname
+            variabledata="'{s}'".format(s=lname)
         elif(variable=="email"):
             f_name,lname=u.gen_username()
-            variabledata=u.gen_email(f_name,lname)
+            variabledata="'{s}'".format(s=u.gen_email(f_name,lname))
         elif(variable=="password"):
-            variabledata=u.gen_pass(8)
+            variabledata="'{s}'".format(s=u.gen_pass(8))
         else:
             pass
         return variabledata
@@ -108,6 +117,6 @@ class Variables:
 if __name__=="__main__":
     #print(sys.argv)
     #print(Variables.categorize("lastname")) 
-    datastring="{'firstname':firstname,'lastname':lastname,'email':email,'friends':['name':username,'email':email...2],'messages':[username...10]"
+    datastring="{'firstname':firstname,'lastname':lastname,'email':email,'friends':['name':username,'email':email...2],'messages':[username...10]}"
     c=CustomJson(datastring)
     print(c.populateJson())
