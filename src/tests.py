@@ -1,9 +1,10 @@
 """
 Tests
 """
-import unittest
+import unittest,json
 from entities import *
 from gen import *
+from customJson import *
 
 class EntitiesTest(unittest.TestCase):
 #user entity    
@@ -64,6 +65,23 @@ class GenTest(unittest.TestCase):
         users=UserGen.gen_user_reviews(10)
         #Messages.success("\nPrinting generated reviews\n {l} \n".format(l=str(users)))
         self.assertEqual(len(users),10)
+
+class DDLanguageTest(unittest.TestCase):
+    def test_simple_data_extrapolation(self):
+        string1="""
+            {'firstname':firstname,
+            'lastname':lastname,
+            'email':email,
+            'friends':['name':username,'email':email...10],
+            'messages':[username...10]}
+        """
+        c=CustomJson(string1)
+        rslt=None
+        try:
+            rslt=json.load(c.populateJson())
+        except:
+            Messages.error("Error parsing {s}".format(s=c.populateJson()))
+
 
 if __name__=="__main__":
     unittest.main()
