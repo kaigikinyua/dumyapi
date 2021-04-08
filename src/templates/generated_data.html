@@ -15,6 +15,37 @@
             div.links{
                 padding:0px;
             }
+            div.app,div#app{
+                padding:0px;
+                display: flex;
+                flex-direction: row;
+                width:800px;
+            }
+            div.variables_list{
+                padding:20px;
+                text-align: center;
+            }
+            span.variable{
+                padding:5px;
+                color:lightseagreen;
+            }
+            div.editor{
+                width:100%;
+            }
+            button.submit,textarea{
+                position: relative;
+                padding:10px;
+                resize: none;
+                outline: none;
+                width:90%;
+                margin:10px 0px;
+                left:50%;
+                transform: translateX(-50%);
+            }
+            textarea{
+                text-align: left;
+                height:300px;
+            }
         </style> 
     {% endblock css %}
     {% block searchmeta %}{% endblock searchmeta %}
@@ -30,40 +61,18 @@
 
     {% block app %}
         <div class="app" id="app">
-            <div class="data_list">
-                <div class="barner">
-                    <h3 class="barner">Data List</h3>
+            <div class="editor">
+                <div class="variables_list">
+                    <span class="variable">username</span>
+                    <span class="variable">email</span>
+                    <span class="variable">password</span>
+                    <span class="variable">paragraph</span>
                 </div>
-                <div class="list">
-                    <ul id="data_list">
-                        <!-- change display means to point to urls that generate data-->
-                        {% for file in gDList %}
-                            <li onclick="updateGenericData('{{file}}','{{rUrl}}/{{file}}.json')">{{file}}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
+                <textarea name="usersJson" placeholder="Type your query" id="query"></textarea>
+                <button class="submit" id="submit">Submit</button>
             </div>
-            <div class="data" id="selected_data">
-                <div class="appbar">
-                    <h3 class="title">[[title]]</h3>
-                    <div class="endpoint">
-                    
-                    </div>
-                </div>
-                <div class="resources" id="data_resources">
-                    <!--endpoint from vue-->
-                    <!--<div class="sect">
-                        <h3 class="title">Structure</h3>
-                        <p>[[ structure ]]</p>
-                    </div>-->
-                    <div class="sect">
-                        <h3 class="title">Raw Data</h3>
-                        <pre class="data" id="data">
-                            
-                        </pre>
-                        <div style="height:100px"></div>
-                    </div>
-                </div>
+            <div class="output">
+
             </div>
         </div>
         <script src="../static/js/vue.js"></script>
