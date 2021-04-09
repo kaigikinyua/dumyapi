@@ -1,18 +1,28 @@
 var mainUrl="http://localhost:5000"
+//ui logic
+function currentSelected(datasetIdentifier){
+    var liTags=document.querySelectorAll('li.genericDataButton')
+    liTags.forEach(t=>{
+        if(t.dataset["litag"]==datasetIdentifier){
+            t.classList.add('active')
+        }else{
+            t.classList.remove('active')
+        }
+    });
+}
+
 var generic_data=new Vue({
     el:"#selected_data",
     delimiters:['[[',']]'],
     data:{
-        title:"Users",
-        endpoint:"https://localhost:5000/users",
+        title:"",
+        endpoint:"",
         structure:{},
         datastring:"",
-        raw_data:[
-            {"username": "Rosemary Einstein", "firstname": "Rosemary", "lastname": "Einstein", "email": "rosemaryeinstein@dev.org", "password": "abcdefghijklm12345678!@#$%", "phone": "+4340795988"},
-            {"username": "Kimberly Tlkmuch", "firstname": "Kimberly", "lastname": "Tlkmuch", "email": "kimberlytlkmuch@example.com", "password": "abcdefghijklmnopqrst12345678!@#$", "phone": "+3628527252"}
-        ],
+        raw_data:[],
     },
 })
+
 //update the generic data
 function updateGenericData(title,subURL){
     var endp=`${mainUrl}${subURL}`
@@ -25,6 +35,7 @@ function updateGenericData(title,subURL){
         //generic_data.datastring=jsonLinter(JSON.stringify(data))
         var d=document.getElementById('data')
         d.innerHTML=jsonLinter(JSON.stringify(data))
+        currentSelected(title)
     })
 }
 

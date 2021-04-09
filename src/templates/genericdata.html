@@ -24,8 +24,9 @@
     {% endblock barner %}
 
     {% block links %}
-        <a href="/"><li><i class="fa fa-home"></i></li></a>
         <a href="/documentation"><li>Documentation</li></a>
+        <a href="/ddl"><li>DDL</li></a>
+        <a href="/"><li><i class="fa fa-home"></i></li></a>
     {% endblock links%}
 
     {% block app %}
@@ -37,7 +38,7 @@
                 <div class="list">
                     <ul id="data_list">
                         {% for file in gDList %}
-                            <li onclick="updateGenericData('{{file}}','{{rUrl}}/{{file}}.json')">{{file}}</li>
+                            <li class="genericDataButton" data-litag="{{file}}" onclick="updateGenericData('{{file}}','{{rUrl}}/{{file}}.json')">{{file}}</li>
                         {% endfor %}
                         <!--<li onclick="updateGenericData()">One</li>
                         <li>One</li>

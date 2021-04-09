@@ -16,7 +16,7 @@ def generic_data_page():
     return render_template('genericdata.html',gDList=gDList,rUrl=request_url)
 
 #generated data overview
-@app.route('/generateddata',methods=["GET","POST"])
+@app.route('/ddl',methods=["GET","POST"])
 def generated_data_page():
     if(request.method=="POST"):
         data=request.get_json("body")
