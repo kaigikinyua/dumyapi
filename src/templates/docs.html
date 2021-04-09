@@ -21,13 +21,11 @@
                 <input name="search" id="search" placeholder="Search docs"/>
             </div>
         </div>
-        <div class="listview">
+        <ul id="doc_links" class="doc_links">
             {% for doclink in docs %}
-                <div class="tile" onclick="renderDoc('{{doclink.link}}')">
-                    <h3>{{ doclink.name }}</h3>
-                </div>
+                <li class="genericDataButton" data-litag="{{doclink.link}}" class="tile" onclick="renderDoc('{{doclink.link}}')">{{ doclink.name }}</li>
             {% endfor %}
-        </div>
+        </ul>
     </nav>
     <section class="doc" id="docsview">
         <div class="appbar">

@@ -53,7 +53,6 @@ ul#data_list li {
   padding: 10px;
   padding: 10px;
   background: none;
-  border-radius: 20px;
   margin: 10px 0px;
   text-align: center;
   -webkit-text-decoration: uppercase;
@@ -66,6 +65,7 @@ ul#data_list li {
 
 ul#data_list li.active {
   background: #24264f;
+  border-right: 5px solid #444795;
 }
 
 ul#data_list li:hover {
