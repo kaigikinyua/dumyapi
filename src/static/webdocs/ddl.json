@@ -18,6 +18,14 @@
             ]
         },
         {
+            "sub_title":"DDL syntax",
+            "body":[
+                "The general syntax is usually 'key':<ddl variable> if you would like to create an object.",
+                "Lets say you want to create a dummy list of users for a chat application the syntax would be 'users':[{'username':username,'email':email}|10]",
+                "This syntax enables you to create a list of 10 user objects where the user object consists of the username and email. Notice the keys are in quotes and the variables are not. It is important to do so inorder for the ddl to recognize the variable and the key"  
+            ]
+        },
+        {
             "sub_title":"DDL Variables",
             "body":[
                 "The ddl variable list consists of the following",
