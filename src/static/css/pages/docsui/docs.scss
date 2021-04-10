@@ -58,18 +58,23 @@ ul#doc_links{
 }
 div.content{
     position: relative;
-    height:90%;
+    height:75vh;
     width:100%;
     overflow-y:scroll;
-    background: white;
+    color:white;
+    padding-bottom: 100px;
+    background:$darkbg;
 }
 .sub_title{
     padding:10px;
+    color:lightskyblue;
+    margin-top:40px;
 }
 .sub_title::before{
     content: '# ';
+    color:lightskyblue;
 }
 p.par{
-    padding:10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    font-size: 1em;
 }

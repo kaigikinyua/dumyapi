@@ -1,0 +1,14 @@
+{
+    "title":"Dummy Data Language",
+    "last_updated":"24th Mar 2021",
+    "items":[
+        {
+            "sub_title":"Getting started with the DDL",
+            "body":[
+                "The dummy data language is mainly a json like syntax that enables the client to format how the data should be presented to the application",
+                "The main aim of the dummy data language is to enable the client to format the data in a manner that his/her application can consume/present the data more easily",
+                "It also helps in the case that the data that the dummy data api provides may be too generic and you would like to borrow some data from colum a and some from column b"
+            ]
+        }
+    ]
+}
