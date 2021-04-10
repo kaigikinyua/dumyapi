@@ -9,6 +9,23 @@
                 "The main aim of the dummy data language is to enable the client to format the data in a manner that his/her application can consume/present the data more easily",
                 "It also helps in the case that the data that the dummy data api provides may be too generic and you would like to borrow some data from colum a and some from column b"
             ]
+        },
+        {
+            "sub_title":"DDL format",
+            "body":[
+                "Just like json the ddl is a key value pair. The key can be whatever the user would like as long as it is in double quotation marks.",
+                "The value is a ddl variable that references a certain data format. It is important that the variable belongs to the ddl otherwise the request won't go through as intended."
+            ]
+        },
+        {
+            "sub_title":"DDL Variables",
+            "body":[
+                "The ddl variable list consists of the following",
+                "User related variables are username,email,password,profilepic,phonenumber",
+                "Product related variables are productname,price,review",
+                "Text blob related variables are title,paragraph",
+                "Integer related variables can be acceessed through int."
+            ]
         }
     ]
 }
