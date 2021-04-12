@@ -11,34 +11,13 @@ the need of putting together a backend. A little json data is enough.
 The dummy api provides a selected variety of dummy data to help you develop a ui prototype 
 fast and easy.
 
-*   Dummy User
-      * Email
-      * First and lastname
-      * Phone
-      * Password
-      * Profile Picture
+*   Dummy User [Email ,First and lastname ,Phone ,Password ,Profile Picture]
 
-*   Dummy Reviews
-      * Username
-      * Review
-      * Time review posted
-      * Likes & Dislikes
+*   Dummy Reviews [Username ,Review ,Time review posted ,Likes & Dislikes]
 
-*   Dummy Products
-      * Product name
-      * Price
-      * 1 Picture
-      * Weight
-      * Shipping Cost
+*   Dummy Products [Product name ,Price ,1 Picture ,Weight ,Shipping Cost]
 
-*   Dummy Blog Posts
-      * Author
-      * Date published
-      * Likes
-      * Dislikes
-      * Views
-      * Blog Title
-      * Blog body
+*   Dummy Blog Posts [Author ,Date published ,Likes ,Dislikes ,Views ,Blog Title ,Blog body]
 
 ## Dummy Data Language (DDL)
 
