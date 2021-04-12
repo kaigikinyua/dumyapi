@@ -46,7 +46,8 @@ class CustomJson:
             rep=Parser.expandVariable(var[1])
             datastringreplacements+=[{"variable":obj,"rep":"{k}:{v}".format(k=var[0],v=rep)}]
         final_str=Parser.compileString(self.datastring,datastringreplacements)
-        return re.sub("'",'"',final_str)
+        #return final_str
+        return re.sub('"','',final_str)
 class Parser:
     @staticmethod
     def filterArrays(datastring):
@@ -54,7 +55,7 @@ class Parser:
         return re.findall("\[[\w\d,':]*\.\.\.[\d]+\]",datastring)
     @staticmethod
     def filterObjects(datastring):
-        return re.findall("['\w]+:[\w]+",datastring)
+        return re.findall("['\w']+:[\w]+",datastring)
     @staticmethod
     def expandVariable(variable):
         return Variables.categorize(variable)
@@ -98,18 +99,18 @@ class Variables:
         variabledata=None
         if(variable=="username"):
             f_name,lname=u.gen_username()
-            variabledata='"{f} {l}"'.format(f=f_name,l=lname)
+            variabledata="'{f} {l}'".format(f=f_name,l=lname)
         elif(variable=="firstname"):
             f_name,lname=u.gen_username()
-            variabledata='"{s}"'.format(s=f_name)
+            variabledata="'{s}'".format(s=f_name)
         elif(variable=="lastname"):
             f_name,lname=u.gen_username()
-            variabledata='"{s}"'.format(s=lname)
+            variabledata="'{s}'".format(s=lname)
         elif(variable=="email"):
             f_name,lname=u.gen_username()
-            variabledata='"{s}"'.format(s=u.gen_email(f_name,lname))
+            variabledata="'{s}'".format(s=u.gen_email(f_name,lname))
         elif(variable=="password"):
-            variabledata='"{s}"'.format(s=u.gen_pass(8))
+            variabledata="'{s}'".format(s=u.gen_pass(8))
         else:
             pass
         return variabledata

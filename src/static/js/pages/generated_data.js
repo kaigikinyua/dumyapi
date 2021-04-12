@@ -5,7 +5,7 @@ submitBtn.addEventListener('click',(e)=>{
 function postQuery(){
     var data={"query":document.getElementById("query").value}
     fetch(
-        "http://localhost:5000/generateddata",
+        "http://localhost:5000/ddl",
         {
             method:"POST",
             body:JSON.stringify(data),
