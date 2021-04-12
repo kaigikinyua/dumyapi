@@ -18,6 +18,7 @@
 
 body {
   background: #14152c;
+  overflow: hidden;
 }
 
 section.app {
@@ -113,5 +114,11 @@ div.content {
 p.par {
   margin-bottom: 10px;
   font-size: 1em;
+}
+
+code {
+  padding: 5px;
+  background: #14152c;
+  color: lightseagreen;
 }
 /*# sourceMappingURL=docs.css.map */

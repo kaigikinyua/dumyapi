@@ -21,8 +21,41 @@
             "sub_title":"DDL syntax",
             "body":[
                 "The general syntax is usually 'key':<ddl variable> if you would like to create an object.",
-                "Lets say you want to create a dummy list of users for a chat application the syntax would be 'users':[{'username':username,'email':email}|10]",
+                "Lets say you want to create a dummy list of users for a chat application the syntax would be",
+                "<code>{'users':[{'username':username,'email':email}|10]}</code>",
                 "This syntax enables you to create a list of 10 user objects where the user object consists of the username and email. Notice the keys are in quotes and the variables are not. It is important to do so inorder for the ddl to recognize the variable and the key"  
+            ]
+        },
+        {
+            "sub_title":"Syntax for getting objects",
+            "body":[
+                "The ddl enables you to create your custom objects in the structure you want. The only thing it does is replace the ddl variable names with their coresponding dummy data.",
+                "Suppose you would like to create a user object. The syntax would be as follows:-",
+                "<code>{'username':username,'email':email,'profile_pic':profile_pic}</code>",
+                "With the ddl the only major thing you would need to remember is that the ddl are the values and they are not enclosed in 'single quotes'",
+                "However your keys for the ddl variables need to be enclosed in single quotes and not double quotes"
+            ]
+        },
+        {
+            "sub_title":"Syntax for getting an array",
+            "body":[
+                "Say you would like to get an array of single values such as product list. The ddl has got your back, all you need is to provide the key for the array and the number of items you want in the array.",
+                "It simply looks like this ",
+                "<code>{'<your array key>':[<ddl variable>...<number of items you want>]}</code>",
+                "The three dots before the <number of items> is a must and there should be no spacing between the characters",
+                "Lets see the syntax for generating a product list and populating it with 10 product names. It would go like this:-",
+                "<code>{'productslist':[productname...10]}</code>"
+            ]
+        },
+        {
+            "sub_title":"Syntax for getting an array of objects",
+            "body":[
+                "What if you would like an array of objects? Well, ddl can achieve this too! The general syntax would be as follows",
+                "<code>{'<key>':['<key1>':<ddl variable>,'<key2>':<ddl variable 2>...<number of objects to return>]}</code>",
+                "Lets see an example of generating a list of 10 friends for a certain users.",
+                "<code>{'user':username,'friendslist':['name':username,'email':email,'profile_pic':profile_pic...10]}</code>",
+                "The general schema of the query result will generaly look like this:",
+                "<code>{'user':'Random Username,'friendslist':[{'name':Friend One,'email':'friendone@email.com','profile_pic':'link to image'}]'}</code>"
             ]
         },
         {

@@ -1,6 +1,7 @@
 @import '../../components/mixins.scss';
 body{
     background: $darkbg;
+    overflow: hidden;
 }
 section.app{
     display: grid;
@@ -77,4 +78,9 @@ div.content{
 p.par{
     margin-bottom: 10px;
     font-size: 1em;
+}
+code{
+    padding:5px;
+    background:$darkbg;
+    color:lightseagreen;
 }
