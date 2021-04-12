@@ -63,10 +63,13 @@
         <div class="app" id="app">
             <div class="editor">
                 <div class="variables_list">
-                    <span class="variable">username</span>
+                    <!-- <span class="variable">username</span>
                     <span class="variable">email</span>
                     <span class="variable">password</span>
-                    <span class="variable">paragraph</span>
+                    <span class="variable">paragraph</span> -->
+                    {% for variable in ddl_variables%}
+                        <span class="variable">{{variable}}</span>
+                    {% endfor %}
                 </div>
                 <textarea name="usersJson" placeholder="Type your query" id="query"></textarea>
                 <button class="submit" id="submit">Submit</button>

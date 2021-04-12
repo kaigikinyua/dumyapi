@@ -25,7 +25,8 @@ def generated_data_page():
         print(res)
         return jsonify({"result":res})
     else:
-        return render_template('generated_data.html')
+        ddl_variables=JsonFile.loadData("./variables.json")
+        return render_template('generated_data.html',ddl_variables=ddl_variables["variables"])
 
 #generic data endpoint
 @app.route('/getgenericdatacache/<genericdata>/<number>')
