@@ -80,13 +80,15 @@ class Variables:
     def categorize(variable):
         variables={
             "number":["int","cords"],
-            "images":["profilepic","thumbnail","productimage"],
-            "user":["username","firstname","lastname","email","password","age"],
-            "textblob":["shortpar","longpar","title"],
-            "product":["productname","review"]
+            "user":["username","firstname","lastname","email","password","age","profilepic"],
+            "textblob":["shortpar","longpar","title","thumbnail"],
+            "product":["productname","review","productimage"]
             }
         categoryMenthods={
-            "user":Variables.userCategory(variable)
+            "user":Variables.userCategory(variable),
+            "number":Variables.numbers(variable),
+            "textblob":Variables.textBlob(variable),
+            "product":Variables.product(variable)
         }
         for v in variables:
             for var in variables[v]:
@@ -111,46 +113,49 @@ class Variables:
             variabledata="'{s}'".format(s=u.gen_email(f_name,lname))
         elif(variable=="password"):
             variabledata="'{s}'".format(s=u.gen_pass(8))
+        elif(variable=="age"):
+            variabledata="'{s}'".format(s=u.gen_age())
+        elif(variable=="profilepic"):
+            variabledata="'{s}'".format(s=u.gen_profile())
         else:
-            pass
+            variabledata="'Unkown user variable'"
         return variabledata
 
     @staticmethod
     def numbers(variable):
+        from random import randrange
         num=None
         if(variable=="int"):
             return randrange(0,10000)
         else:
             return "Unimplemented number {n}".format(n=variable)
-    
-    @staticmethod
-    def images(variable):
-        img_res=None
-        if(variable=="profilepic"):
-            pass
-        elif(variable=="thumbnail"):
-            pass
-        elif(variable=="productimage"):
-            pass
-        else:
-            pass
 
     @staticmethod
     def textBlob(variable):
         text=None
+        t=TextBlob()
         if(variable=="longpar"):
-            pass
+            text="'{s}'".format(s=t.gen_paragraph("l"))
         elif(variable=="shorpar"):
-            pass
+            text="'{s}'".format(s=t.gen_paragraph("s"))
         elif(variable=="title"):
-            pass
+            text="'Title not implemented'"
+        elif(variable=="thumbnail"):
+            text="'{s}'".format(s=t.gen_ThumbNail())
+        return text
     @staticmethod
     def product(variable):
         product=None
+        p=Product()
         if(variable=="productname"):
-            pass
+            product="'{s}'".format(s=p.gen_ProductName())
         elif(variable=="review"):
-            pass
+            product=p.gen_productReviews(randrange(0,10))
+        elif(variable=="productimage"):
+            product=p.gen_productImage()
+        else:
+            product="Unknown product variable {v}".format(v=variable)
+        return product
 
 if __name__=="__main__":
     #print(sys.argv)

@@ -1,16 +1,20 @@
 {
     "variables":[
+        "int",
+        "cords",
         "username",
         "firstname",
         "lastname",
         "email",
         "password",
-        "profilePic",
-        "productName",
-        "productPic",
+        "age",
+        "profilepic",
+        "shortpar",
+        "longpar",
+        "title",
+        "thumbnail",
+        "productname",
         "review",
-        "int",
-        "par",
-        "title"
+        "productimage"
     ]
 }
