@@ -4,6 +4,12 @@
 
 const baseURL="http://localhost:5000"
 
+window.onload=()=>{
+    var doclinks=document.querySelectorAll('li.genericDataButton')
+    renderDoc(doclinks[0].dataset["litag"])
+}
+
+
 //ui logic
 function currentSelected(datasetIdentifier){
     var liTags=document.querySelectorAll('li.genericDataButton')

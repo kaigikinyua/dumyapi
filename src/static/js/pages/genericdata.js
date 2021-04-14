@@ -1,4 +1,9 @@
 var mainUrl="http://localhost:5000"
+window.onload=()=>{
+    var liTags=document.querySelectorAll('li.genericDataButton')
+    var file=liTags[0].dataset["litag"]
+    updateGenericData(file,`/static/genericdata/${file}.json`)
+}
 //ui logic
 function currentSelected(datasetIdentifier){
     var liTags=document.querySelectorAll('li.genericDataButton')

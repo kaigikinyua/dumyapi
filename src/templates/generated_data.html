@@ -16,9 +16,9 @@
                 padding:0px;
             }
             div.app,div#app{
-                padding:0px;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
+                padding:0px;
                 width:800px;
             }
             div.variables_list{
@@ -56,6 +56,7 @@
 
     {% block links %}
         <a href="/"><li><i class="fa fa-home"></i></li></a>
+        <a href="/genericdata"><li>Genericdata</li></a>
         <a href="/documentation"><li>Documentation</li></a>
     {% endblock links%}
 
@@ -63,19 +64,18 @@
         <div class="app" id="app">
             <div class="editor">
                 <div class="variables_list">
-                    <!-- <span class="variable">username</span>
-                    <span class="variable">email</span>
-                    <span class="variable">password</span>
-                    <span class="variable">paragraph</span> -->
+                    <h3 class="title">Variables</h3>
                     {% for variable in ddl_variables%}
                         <span class="variable">{{variable}}</span>
                     {% endfor %}
                 </div>
+                <h3 class="title">Query</h3>
                 <textarea name="usersJson" placeholder="Type your query" id="query"></textarea>
-                <button class="submit" id="submit">Submit</button>
+                <button class="submit" id="submit" disabled>Submit</button>
             </div>
             <div class="output">
-
+                <h3 class="title">OutPut</h3>
+                <div id="output"></div>
             </div>
         </div>
         <script src="../static/js/vue.js"></script>
