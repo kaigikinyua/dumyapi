@@ -79,10 +79,10 @@ class Variables:
     @staticmethod
     def categorize(variable):
         variables={
-            "number":["price","cords"],
+            "number":["int","cords"],
             "images":["profilepic","thumbnail","productimage"],
             "user":["username","firstname","lastname","email","password","age"],
-            "textblob":["paragraph","title"],
+            "textblob":["shortpar","longpar","title"],
             "product":["productname","review"]
             }
         categoryMenthods={
@@ -114,6 +114,43 @@ class Variables:
         else:
             pass
         return variabledata
+
+    @staticmethod
+    def numbers(variable):
+        num=None
+        if(variable=="int"):
+            return randrange(0,10000)
+        else:
+            return "Unimplemented number {n}".format(n=variable)
+    
+    @staticmethod
+    def images(variable):
+        img_res=None
+        if(variable=="profilepic"):
+            pass
+        elif(variable=="thumbnail"):
+            pass
+        elif(variable=="productimage"):
+            pass
+        else:
+            pass
+
+    @staticmethod
+    def textBlob(variable):
+        text=None
+        if(variable=="longpar"):
+            pass
+        elif(variable=="shorpar"):
+            pass
+        elif(variable=="title"):
+            pass
+    @staticmethod
+    def product(variable):
+        product=None
+        if(variable=="productname"):
+            pass
+        elif(variable=="review"):
+            pass
 
 if __name__=="__main__":
     #print(sys.argv)
