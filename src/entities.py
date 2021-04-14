@@ -147,6 +147,9 @@ class Product:
             reviews+=[u.gen_userReview()]
         ##push reviews to array
         return reviews
+    def gen_productImage(self):
+        images=os.listdir("./static/images/products")
+        return "/static/images/products/{i}".format(i=images[randrange(0,len(images))])
 
 class TextBlob:
     def __init__(self):
@@ -177,7 +180,7 @@ class TextBlob:
         #return list_data["list"][0:l]
     def gen_ThumbNail(self):
         images=os.listdir("./static/images/thumbnails")
-        return images[randrange(0,len(images))]
+        return "./static/images/thumbnails/{i}".format(i=images[randrange(0,len(images))])
 
 class Blog:
     def __init__(self):
