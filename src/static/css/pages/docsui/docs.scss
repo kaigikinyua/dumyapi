@@ -1,6 +1,7 @@
 @import '../../components/mixins.scss';
 body{
-    background:darken($darkbg,5%);
+    background: $darkbg;
+    overflow: hidden;
 }
 section.app{
     display: grid;
@@ -33,39 +34,53 @@ div.search{
     border-radius: 10px;
     i{color:$darkbg}
 }
-
-div.listview{
-    padding:10px;
-    background:lighten($lightbg,10%);
-    position: relative;
-    height:80%;
-    overflow-y:scroll;
-}
-div.tile{
-    padding:10px;
-    color:$darkbg;
-    background:white;
-    margin-top:10px;
-    border-radius: 10px;
-    h3{
-        font-size: 1em;
-        font-weight: lighter;
+ul#doc_links{
+    list-style-type: none;
+    li{
+        padding:10px;
+        padding: 10px;
+        background: none;
+        //border-radius: 20px;
+        margin: 10px 0px;
+        text-align: center;
+        text-decoration: uppercase;
+        text-transform: capitalize;
+        border:1px solid $lightbg;
+        transition: 1s;
+        color:white;
+    }
+    li.active{
+        background:$lightbg;
+        border-right: 5px solid lighten($lightbg,20%);
+    }
+    li:hover{
+        background:lighten($lightbg,10%);
     }
 }
 div.content{
     position: relative;
-    height:90%;
+    height:75vh;
     width:100%;
     overflow-y:scroll;
-    background: white;
+    color:white;
+    padding-bottom: 100px;
+    background:$darkbg;
 }
 .sub_title{
     padding:10px;
+    color:lightskyblue;
+    margin-top:40px;
 }
 .sub_title::before{
     content: '# ';
+    color:lightskyblue;
 }
 p.par{
-    padding:10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+code{
+    padding:5px;
+    background:$darkbg;
+    color:lightseagreen;
 }

@@ -1,0 +1,28 @@
+{
+    "firstname":"Handsome",
+    "lastname":"Clarkson",
+    "email":"jamesclark@testmail.com",
+    "friends":[
+        {"name":"Richard Einstein","email":"roselyneclarkson@testmail.com"},
+        {"name":"Clark Clark","email":"aprilschewpid@gen.com"},
+        {"name":"John Einstein","email":"stanleyschwatsniger@example.com"},
+        {"name":"Richard May","email":"jimmay@testmail.com"},
+        {"name":"Junior Clarkson","email":"antonyeinstein@gen.com"},
+        {"name":"May Stalion","email":"jamesschwatsniger@dev.org"},
+        {"name":"Roselyne May","email":"maykent@dev.org"},
+        {"name":"April Schewpid","email":"antonykent@fun.org"},
+        {"name":"Clark Lincon","email":"lewisbuggy@testmail.com"},
+        {"name":"Jane Kent","email":"venuslincon@fun.org"}],
+    "messages":[
+        "Jim Suskin",
+        "Jeremy Stalion",
+        "Lucy Hamilton",
+        "Jane Tlkmuch",
+        "Richard Buggy",
+        "Stanley Schewpid",
+        "May Einstein",
+        "Ann Clarkson",
+        "Casper Einstein",
+        "Arnold May"
+        ]
+}

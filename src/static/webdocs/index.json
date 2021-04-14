@@ -1,5 +1,6 @@
 {
     "topics":[
+        {"name":"Dummy Data Language","link":"/static/webdocs/ddl.json","desc":"Dummy Data Language docs"},
         {"name":"Common Links","link":"/static/webdocs/commonlinks.json","desc":"Commonly used apis"},
         {"name":"Dummy user data","link":"/static/webdocs/userdata_schema.json","desc":"Generic dummy user data schema"},
         {"name":"Dummy product data","link":"/static/webdocs/productsdata.json","desc":"Dummy product data schema"},

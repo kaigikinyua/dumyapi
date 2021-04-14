@@ -1,0 +1,72 @@
+{
+    "title":"Dummy Data Language",
+    "last_updated":"24th Mar 2021",
+    "items":[
+        {
+            "sub_title":"Getting started with the DDL",
+            "body":[
+                "The dummy data language is mainly a json like syntax that enables the client to format how the data should be presented to the application",
+                "The main aim of the dummy data language is to enable the client to format the data in a manner that his/her application can consume/present the data more easily",
+                "It also helps in the case that the data that the dummy data api provides may be too generic and you would like to borrow some data from colum a and some from column b"
+            ]
+        },
+        {
+            "sub_title":"DDL format",
+            "body":[
+                "Just like json the ddl is a key value pair. The key can be whatever the user would like as long as it is in double quotation marks.",
+                "The value is a ddl variable that references a certain data format. It is important that the variable belongs to the ddl otherwise the request won't go through as intended."
+            ]
+        },
+        {
+            "sub_title":"DDL syntax",
+            "body":[
+                "The general syntax is usually 'key':<ddl variable> if you would like to create an object.",
+                "Lets say you want to create a dummy list of users for a chat application the syntax would be",
+                "<code>{'users':[{'username':username,'email':email}|10]}</code>",
+                "This syntax enables you to create a list of 10 user objects where the user object consists of the username and email. Notice the keys are in quotes and the variables are not. It is important to do so inorder for the ddl to recognize the variable and the key"  
+            ]
+        },
+        {
+            "sub_title":"Syntax for getting objects",
+            "body":[
+                "The ddl enables you to create your custom objects in the structure you want. The only thing it does is replace the ddl variable names with their coresponding dummy data.",
+                "Suppose you would like to create a user object. The syntax would be as follows:-",
+                "<code>{'username':username,'email':email,'profile_pic':profile_pic}</code>",
+                "With the ddl the only major thing you would need to remember is that the ddl are the values and they are not enclosed in 'single quotes'",
+                "However your keys for the ddl variables need to be enclosed in single quotes and not double quotes"
+            ]
+        },
+        {
+            "sub_title":"Syntax for getting an array",
+            "body":[
+                "Say you would like to get an array of single values such as product list. The ddl has got your back, all you need is to provide the key for the array and the number of items you want in the array.",
+                "It simply looks like this ",
+                "<code>{'<your array key>':[<ddl variable>...<number of items you want>]}</code>",
+                "The three dots before the <number of items> is a must and there should be no spacing between the characters",
+                "Lets see the syntax for generating a product list and populating it with 10 product names. It would go like this:-",
+                "<code>{'productslist':[productname...10]}</code>"
+            ]
+        },
+        {
+            "sub_title":"Syntax for getting an array of objects",
+            "body":[
+                "What if you would like an array of objects? Well, ddl can achieve this too! The general syntax would be as follows",
+                "<code>{'<key>':['<key1>':<ddl variable>,'<key2>':<ddl variable 2>...<number of objects to return>]}</code>",
+                "Lets see an example of generating a list of 10 friends for a certain users.",
+                "<code>{'user':username,'friendslist':['name':username,'email':email,'profile_pic':profile_pic...10]}</code>",
+                "The general schema of the query result will generaly look like this:",
+                "<code>{'user':'Random Username,'friendslist':[{'name':Friend One,'email':'friendone@email.com','profile_pic':'link to image'}]'}</code>"
+            ]
+        },
+        {
+            "sub_title":"DDL Variables",
+            "body":[
+                "The ddl variable list consists of the following",
+                "User related variables are username,email,password,profilepic,phonenumber",
+                "Product related variables are productname,price,review",
+                "Text blob related variables are title,paragraph",
+                "Integer related variables can be acceessed through int."
+            ]
+        }
+    ]
+}

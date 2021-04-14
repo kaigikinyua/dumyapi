@@ -1,0 +1,16 @@
+{
+    "variables":[
+        "username",
+        "firstname",
+        "lastname",
+        "email",
+        "password",
+        "profilePic",
+        "productName",
+        "productPic",
+        "review",
+        "int",
+        "par",
+        "title"
+    ]
+}

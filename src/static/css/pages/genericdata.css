@@ -45,12 +45,31 @@ body {
   padding: 10px;
 }
 
-ul {
+ul#data_list {
   list-style-type: none;
 }
 
-ul li {
+ul#data_list li {
   padding: 10px;
+  padding: 10px;
+  background: none;
+  margin: 10px 0px;
+  text-align: center;
+  -webkit-text-decoration: uppercase;
+          text-decoration: uppercase;
+  text-transform: capitalize;
+  border: 1px solid #24264f;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+ul#data_list li.active {
+  background: #24264f;
+  border-right: 5px solid #444795;
+}
+
+ul#data_list li:hover {
+  background: #343672;
 }
 
 div.appbar {

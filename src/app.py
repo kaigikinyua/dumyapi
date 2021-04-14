@@ -1,6 +1,7 @@
 from flask import Flask,render_template,jsonify,request
 from models import GenericData
 from utils import JsonFile
+from customJson import *
 app=Flask(__name__)
 #website
 @app.route('/')
@@ -15,11 +16,17 @@ def generic_data_page():
     return render_template('genericdata.html',gDList=gDList,rUrl=request_url)
 
 #generated data overview
-@app.route('/generateddata')
+@app.route('/ddl',methods=["GET","POST"])
 def generated_data_page():
-    gDList=GenericData.listGenericDataFiles()
-    request_url="/static/generate_data"
-    return render_template('generated_data.html',gDList=gDList,rUrl=request_url)
+    if(request.method=="POST"):
+        data=request.get_json("body")
+        c=CustomJson(str(data))
+        res=c.populateJson()
+        print(res)
+        return jsonify({"result":res})
+    else:
+        ddl_variables=JsonFile.loadData("./variables.json")
+        return render_template('generated_data.html',ddl_variables=ddl_variables["variables"])
 
 #generic data endpoint
 @app.route('/getgenericdatacache/<genericdata>/<number>')
