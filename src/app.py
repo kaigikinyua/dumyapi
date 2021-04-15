@@ -24,11 +24,10 @@ def generated_data_page():
         data=request.get_json("body")
         c=CustomJson(str(data))
         res=c.populateJson()
-        print(res)
         response=flask.make_response(jsonify({"result":res}))
         response.headers.add('Access-Control-Allow-Origin','*')
         response.headers.add('Access-Control-Allow-Headers','Content-Type,Authorization')
-
+        print(response)
         return response
     else:
         ddl_variables=JsonFile.loadData("./variables.json")
@@ -38,15 +37,19 @@ def generated_data_page():
 @app.route('/getgenericdatacache/<genericdata>/<number>')
 def getdata(genericdata,number=100):
     data=GenericData.genericDataActions(genericdata,int(number))
-    response={}
+    response_data={}
     print(data)
     if(data!={} and data!=False and data!=None):
         #data+=[{"endpoint":"/getgenericdatacache/{gd}/[number]".format(gd=genericdata)}]
-        response=jsonify(data)
+        response_data=jsonify(data)
     else:
         #run diagnostics on generic data - new thread or process
         #log the error to a file
-        response=jsonify({"state":"error","genericdata":{},"message":"There seems to be an error getting generic data {g}".format(g=genericdata)})
+        response_data=jsonify({"state":"error","genericdata":{},"message":"There seems to be an error getting generic data {g}".format(g=genericdata)})
+    response=flask.make_response(response_data)
+    response.headers.add('Access-Control-Allow-Origin','*')
+    response.headers.add('Access-Control-Allow-Headers','Content-Type,Authorization')
+    print(request.environ.get('HTTP_ORIGIN','default_value'))
     return response
 
 #documentation
