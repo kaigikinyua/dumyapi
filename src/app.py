@@ -1,3 +1,4 @@
+import flask
 from flask import Flask,render_template,jsonify,request
 from models import GenericData
 from utils import JsonFile
@@ -18,12 +19,17 @@ def generic_data_page():
 #generated data overview
 @app.route('/ddl',methods=["GET","POST"])
 def generated_data_page():
+    print(request.environ.get('HTTP_ORIGIN','*'))
     if(request.method=="POST"):
         data=request.get_json("body")
         c=CustomJson(str(data))
         res=c.populateJson()
         print(res)
-        return jsonify({"result":res})
+        response=flask.make_response(jsonify({"result":res}))
+        response.headers.add('Access-Control-Allow-Origin','*')
+        response.headers.add('Access-Control-Allow-Headers','Content-Type,Authorization')
+
+        return response
     else:
         ddl_variables=JsonFile.loadData("./variables.json")
         return render_template('generated_data.html',ddl_variables=ddl_variables["variables"])
